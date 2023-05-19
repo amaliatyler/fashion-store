@@ -1,0 +1,72 @@
+.promo { /* TODO придумать альтернативу марджину */
+    margin-bottom: 63px;
+}
+
+.promo__content {
+    display: flex;
+    column-gap: 24px;
+    padding: 68px 0 0 120px;
+
+    border-radius: 60px;
+    background-color: #F4F6F5;
+}
+
+.promo__title {
+    font-weight: 900;
+    font-size: 96px;
+    line-height: calc(120 / 96);
+    margin-bottom: 40px;
+    max-width: 474px;
+}
+
+.promo__descr {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: calc(48 / 32);
+    letter-spacing: -0.05em;
+    margin-bottom: 32px;
+}
+
+.promo__btn {
+    text-transform: none;
+}
+
+.promo__btn-wrapper {
+    display: flex;
+    column-gap: 34px;
+    align-items: center;
+}
+
+.promo__btn-wrapper::before {
+    content: '';
+    display: inline-block;
+    width: 190px;
+    height: 32px;
+    background-image: url('./../../img/icons/decor-yellow.svg');
+}
+
+.highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.highlight span {
+    position: relative;
+}
+
+.highlight::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: -30px;
+    right: -165px;
+    background-color: var(--mainWhite);
+    transform: rotate(-2deg);
+}
+
+.highlight--yellow::before {
+    background-color: var(--mainYellow);
+    right: -110px;
+}

@@ -1,0 +1,33 @@
+import './promo.css';
+import promoImg from './../../img/images/header-img.jpg';
+import BtnLink from '../btn/BtnLink';
+
+function Promo() {
+    return (
+        <section className="promo">
+            <div className="container">
+                <div className="promo__content">
+                    <div className="promo__text">
+                        <h2 className="promo__title">
+                            <span className="highlight">
+                                <span>LET’S</span>
+                            </span> EXPLORE 
+                            <span className="highlight highlight--yellow">
+                                <span>UNIQUE</span>
+                            </span> CLOTHES.
+                        </h2>
+                        <p className="promo__descr">Live for Influential and Innovative fashion!</p>
+                        <div className="promo__btn-wrapper">
+                            <BtnLink className='promo__btn' innerText="Shop Now" />
+                        </div>
+                    </div>
+                    <div className="promo__img">
+                        <img src={promoImg} alt="Promo" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default Promo;

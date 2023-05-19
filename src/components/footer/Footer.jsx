@@ -1,0 +1,58 @@
+import './footer.css';
+
+import facebook from './../../img/socials/fb.svg';
+import instagram from './../../img/socials/inst.svg';
+import twitter from './../../img/socials/tw.svg';
+import linkedIn from './../../img/socials/in.svg';
+
+function Footer() {
+  return (
+    <footer className="footer">
+        <div className="container">
+            <div className="footer__body">
+                <div className="footer__main">
+                    <a href="#!" className="footer__logo">Fashion</a>
+                    <div className="footer__text">Complete your style with awesome clothes from us.</div>
+                    <div className="footer__social social">
+                        <div className="social__list">
+                            <li><a href="#!" className="social-list-item"><img src={facebook} alt="" /></a></li>
+                            <li><a href="#!" className="social-list-item"><img src={instagram} alt="" /></a></li>
+                            <li><a href="#!" className="social-list-item"><img src={twitter} alt="" /></a></li>
+                            <li><a href="#!" className="social-list-item"><img src={linkedIn} alt="" /></a></li>
+                        </div>
+                    </div>
+                </div>
+                <div className="footer__columns footer-menu">
+                    <div className="footer-menu__column">
+                        <ul className="footer-menu__list">
+                            <li><a href="#!" className="footer-menu__link">About</a></li>
+                            <li><a href="#!" className="footer-menu__link">Contact us</a></li>
+                            <li><a href="#!" className="footer-menu__link">Support</a></li>
+                            <li><a href="#!" className="footer-menu__link">Company</a></li>
+                            <li><a href="#!" className="footer-menu__link">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div className="footer-menu__column">
+                        <ul className="footer-menu__list">
+                            <li><a href="#!" className="footer-menu__link">Quick Link</a></li>
+                            <li><a href="#!" className="footer-menu__link">Share Location</a></li>
+                            <li><a href="#!" className="footer-menu__link">Orders Tracking</a></li>
+                            <li><a href="#!" className="footer-menu__link">Size Guide</a></li>
+                            <li><a href="#!" className="footer-menu__link">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div className="footer-menu__column">
+                        <ul className="footer-menu__list">
+                            <li><a href="#!" className="footer-menu__link">Legal</a></li>
+                            <li><a href="#!" className="footer-menu__link">Terms & conditions</a></li>
+                            <li><a href="#!" className="footer-menu__link">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  )
+}
+
+export default Footer;

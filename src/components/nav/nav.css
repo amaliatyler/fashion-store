@@ -1,0 +1,17 @@
+.nav__list {
+    display: flex;
+    column-gap: 65px;
+    align-items: center;
+}
+
+.list__link {
+    color: var(--mainColor);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.5em;
+    letter-spacing: 0.01em;
+}
+
+.nav__btn {
+    text-transform: uppercase;
+}
