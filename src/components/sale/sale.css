@@ -6,3 +6,51 @@
     column-gap: 24px;
     padding-right: 200px;
 }
+
+.sale__text {
+    margin-top: 128px;
+    max-width: 666px;
+    align-items: left;
+}
+
+.sale__title {
+    font-weight: 900;
+    font-size: 96px;
+    line-height: calc(120 / 96);
+    margin-bottom: 40px;
+    max-width: 474px;
+}
+
+.sale__title .highlight::before {
+    bottom: -5px;
+    right: -62px;
+}
+
+.sale__img img {
+    max-height: 968px;
+    max-width: 968px;
+}
+
+.sale__descr {
+    font-weight: 500;
+    font-size: 36px;
+    color: #231300;
+    margin-bottom: 34px;
+}
+
+.sale__date {
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.sale__terms {
+    font-weight: 400;
+    font-size: 36px;
+    margin-bottom: 78px;
+}
+
+.class {
+    fill: rgba(255, 255, 255, 0.5);
+    fill: #000
+}

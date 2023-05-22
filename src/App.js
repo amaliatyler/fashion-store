@@ -14,7 +14,7 @@ function App() {
       <Promo />
       <Brands />
       <Arrivals />
-      {/* <Sale /> */}
+      <Sale />
       <Favorite />
       <Application />
       <Footer />
