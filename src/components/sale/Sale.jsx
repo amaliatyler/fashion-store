@@ -2,6 +2,7 @@ import './sale.css';
 
 import saleImg from './../../img/images/sale-img.png';
 import BtnLink from '../btn/BtnLink';
+import Sprite from '../sprite/Sprite';
 
 function Sale() {
   return (
@@ -9,11 +10,7 @@ function Sale() {
         <div className="container">
             <div className="sale__content">
                 <div className="sale__img">
-                    <span>
-                        <svg class="star">
-                            <use href="#star"></use>
-                        </svg>
-                    </span>
+                    <Sprite />
                     <img src={saleImg} alt="Sale" />
                 </div>
                 <div className="sale__text">
