@@ -6,6 +6,7 @@ import Sale from "./components/sale/Sale";
 import Favorite from "./components/favorite/Favorite";
 import Application from "./components/application/Application";
 import Footer from "./components/footer/Footer";
+import SignUp from "./components/signUp/SignUp";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Sale />
       <Favorite />
       <Application />
+      <SignUp />
       <Footer />
     </div>
   );

@@ -9,9 +9,11 @@ function Sale() {
         <div className="container">
             <div className="sale__content">
                 <div className="sale__img">
-                    <svg class="star">
-                        <use href="~/sprite.svg#star"></use>
-                    </svg>
+                    <span>
+                        <svg class="star">
+                            <use href="#star"></use>
+                        </svg>
+                    </span>
                     <img src={saleImg} alt="Sale" />
                 </div>
                 <div className="sale__text">
