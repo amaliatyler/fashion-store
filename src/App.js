@@ -7,6 +7,7 @@ import Favorite from "./components/favorite/Favorite";
 import Application from "./components/application/Application";
 import Footer from "./components/footer/Footer";
 import SignUp from "./components/signUp/SignUp";
+import addShineClass from './utils/addShineClass';
 
 function App() {
   return (

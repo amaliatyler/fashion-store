@@ -1,6 +1,5 @@
 import './sale.css';
 
-import saleImg from './../../img/images/sale-img.png';
 import BtnLink from '../btn/BtnLink';
 import Sprite from '../sprite/Sprite';
 
@@ -10,8 +9,9 @@ function Sale() {
         <div className="container">
             <div className="sale__content">
                 <div className="sale__img">
-                    <Sprite />
-                    <img src={saleImg} alt="Sale" />
+                    <Sprite className="sale__star" iconName="star"/>
+                    <Sprite className="sale__star" iconName="star"/>
+                    <Sprite className="sale__star" iconName="star"/>
                 </div>
                 <div className="sale__text">
                     <div className="sale__title">

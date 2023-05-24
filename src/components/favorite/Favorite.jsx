@@ -1,8 +1,7 @@
 import Post from '../posts/Post';
 import './favorite.css';
 
-import post01img from "./../../img/images/promo-01.jpg";
-import post02img from "./../../img/images/promo-02.jpg";
+import {posts} from './../../helpers/postsList';
 
 function Favorite() {
   return (
@@ -12,8 +11,15 @@ function Favorite() {
                 <h2 className="favorite__title section-title">Young’s Favourite</h2>
             </div>
             <div className="favorite__posts">
-                <Post title="Trending on instagram" img={post01img}/>
-                <Post title="All Under $40" img={post02img}/>
+                {posts.map((post, index) => {
+                        return <Post 
+                            key = {index}
+                            title = {post.title}
+                            subtitle = {post.subtitle}
+                            img= {post.img}
+                            index={index}
+                            />
+                    })}
             </div>
         </div>
     </section>
