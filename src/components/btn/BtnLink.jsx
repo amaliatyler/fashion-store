@@ -1,4 +1,4 @@
-import './btn.css';
+import './btn.scss';
 
 function BtnLink(props) {
     return (

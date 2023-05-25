@@ -1,0 +1,15 @@
+.favorite {
+    padding-top: 120px;
+    padding-bottom: 143px;
+    
+    &__header {
+        margin-bottom: 100px;
+    }
+
+    &__posts {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 30px;
+    }
+
+}

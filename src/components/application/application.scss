@@ -1,39 +1,39 @@
 .application {
-    margin-bottom: 220px;
-}
+  margin-bottom: 220px;
 
-.application__content {
+  &__content {
     display: flex;
     column-gap: 24px;
     /* padding-left: 120px; */
     justify-content: space-around;
-}
+  }
 
-.application__text {
+  &__text {
     margin-top: 270px;
     max-width: 507px;
-}
+  }
 
-.application__title {
+  &__title {
     font-weight: 900;
     font-size: 48px;
     margin-bottom: 40px;
-}
+  }
 
-.application__descr {
+  &__descr {
     font-weight: 500;
     font-size: 24px;
     /* line-height: calc(48 / 32); */
     letter-spacing: -0.04em;
     margin-bottom: 65px;
     color: var(--mainGrey);
-}
+  }
 
-.application__socials {
+  &__socials {
     display: flex;
     column-gap: 20px;
-}
+  }
 
-.application__link {
+  &__link {
     display: inline-block;
+  }
 }

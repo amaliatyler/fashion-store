@@ -1,5 +1,5 @@
 import Post from '../posts/Post';
-import './favorite.css';
+import './favorite.scss';
 
 import {posts} from './../../helpers/postsList';
 

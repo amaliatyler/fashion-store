@@ -1,4 +1,4 @@
-import './sale.css';
+import './sale.scss';
 
 import BtnLink from '../btn/BtnLink';
 import Sprite from '../sprite/Sprite';

@@ -1,9 +1,5 @@
-import './footer.css';
+import './footer.scss';
 
-// import facebook from './../../img/socials/fb.svg';
-// import instagram from './../../img/socials/inst.svg';
-// import twitter from './../../img/socials/tw.svg';
-// import linkedIn from './../../img/socials/in.svg';
 import Sprite from '../sprite/Sprite';
 
 function Footer() {

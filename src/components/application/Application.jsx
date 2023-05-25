@@ -1,4 +1,4 @@
-import './application.css';
+import './application.scss';
 
 import appStore from './../../img/icons/app-store.png';
 import googlePlay from './../../img/icons/google-play.png';

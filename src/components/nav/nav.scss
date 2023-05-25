@@ -1,0 +1,30 @@
+.nav {
+
+    &__list {
+        display: flex;
+        column-gap: 65px;
+        align-items: center;
+    }
+
+    &__btn {
+        text-transform: uppercase;
+    }
+
+}
+
+.list {
+
+    &__link {
+        color: var(--mainColor);
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 1.5em;
+        letter-spacing: 0.01em;
+        transition: all 0.3s ease 0.1s;
+
+        &:hover {
+            color: var(--mainYellow);
+        }
+    }
+
+}
