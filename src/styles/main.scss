@@ -1,9 +1,13 @@
+@import './reset.scss';
+@import './mixins.scss';
+
 :root {
   --mainColor: #000;
   --mainWhite: #fff;
   --mainYellow: #ebd96b;
   --mainGrey: #7f7f7f;
 }
+
 
 body {
   font-family: "Poppins", sans-serif;
