@@ -1,7 +1,7 @@
 import logo from './../../img/icons/logo.svg';
 import Nav from '../nav/Nav';
 
-import './header.scss';
+// import './header.scss';
 
 function Header () {
     return (

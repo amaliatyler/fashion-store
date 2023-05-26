@@ -1,5 +1,5 @@
 import Card from '../cards/Card';
-import './arrivals.scss';
+// import './arrivals.scss';
 
 import {cards} from './../../helpers/cardsList';
 

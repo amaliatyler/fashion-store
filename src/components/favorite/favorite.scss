@@ -1,9 +1,14 @@
 .favorite {
     padding-top: 120px;
     padding-bottom: 143px;
+    @include adaptive-value('padding-top', 120, 30, 0);
+    @include adaptive-value('padding-bottom', 143, 30, 0);
+
     
     &__header {
         margin-bottom: 100px;
+        @include adaptive-value('margin-bottom', 100, 30, 0);
+
     }
 
     &__posts {

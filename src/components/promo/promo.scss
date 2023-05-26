@@ -5,14 +5,19 @@
         display: flex;
         column-gap: 24px;
         padding: 68px 0 0 120px;
-    
+        @include adaptive-value('padding-top', 68, 30, 0);
+        @include adaptive-value('padding-left', 120, 30, 0);
         border-radius: 60px;
         background-color: #F4F6F5;
     }
 
+    &__text {
+        flex-basis: 50%;
+    }
+
     &__title {
         font-weight: 900;
-        font-size: 96px;
+        @include adaptive-value('font-size', 96, 60, 1);
         line-height: calc(120 / 96);
         margin-bottom: 40px;
         max-width: 474px;
@@ -20,10 +25,21 @@
 
     &__descr {
         font-weight: 400;
-        font-size: 32px;
+        @include adaptive-value('font-size', 32, 25, 1);
         line-height: calc(48 / 32);
         letter-spacing: -0.05em;
         margin-bottom: 32px;
+    }
+
+    &__img {
+        flex-basis: 50%;
+        position: relative;
+        img {
+            width: 100%;
+            object-fit: contain;
+            position: absolute;
+            bottom: 0;
+        }
     }
 
     &__btn-wrapper {

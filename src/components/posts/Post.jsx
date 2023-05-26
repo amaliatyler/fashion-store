@@ -1,4 +1,4 @@
-import './post.scss';
+// import './post.scss';
 
 import arrow from "./../../img/icons/arrow.svg";
 

@@ -1,30 +1,30 @@
 .application {
-  margin-bottom: 220px;
+  @include adaptive-value('margin-bottom', 220, 40, 0);
 
   &__content {
     display: flex;
     column-gap: 24px;
-    /* padding-left: 120px; */
     justify-content: space-around;
   }
 
   &__text {
-    margin-top: 270px;
+    @include adaptive-value('margin-top', 270, 30, 0);
     max-width: 507px;
   }
 
   &__title {
     font-weight: 900;
-    font-size: 48px;
-    margin-bottom: 40px;
+    @include adaptive-value('font-size', 48, 35, 0);
+    @include adaptive-value('margin-bottom', 40, 20, 0);
   }
 
   &__descr {
     font-weight: 500;
-    font-size: 24px;
+    @include adaptive-value('font-size', 24, 14, 0);
     /* line-height: calc(48 / 32); */
     letter-spacing: -0.04em;
     margin-bottom: 65px;
+    @include adaptive-value('margin-bottom', 65, 20, 0);
     color: var(--mainGrey);
   }
 

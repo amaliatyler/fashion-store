@@ -1,4 +1,4 @@
-import './promo.scss';
+// import './promo.scss';
 import promoImg from './../../img/images/header-img.jpg';
 import BtnLink from '../btn/BtnLink';
 

@@ -1,5 +1,5 @@
 import BtnLink from '../btn/BtnLink';
-import './nav.scss';
+// import './nav.scss';
 
 function Nav(props) {
     return(

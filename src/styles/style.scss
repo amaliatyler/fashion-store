@@ -1,0 +1,8 @@
+/* импорт сброса стилей */
+@import './reset.scss';
+/* импорт общих стилей */
+@import './common.scss';
+/* импорт миксинов */
+@import './mixins.scss';
+/* импорт стилей всех компонентов */
+@import './imports.scss';

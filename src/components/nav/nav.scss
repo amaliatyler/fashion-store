@@ -3,6 +3,7 @@
     &__list {
         display: flex;
         column-gap: 65px;
+        @include adaptive-value('column-gap', 50, 25, 0);
         align-items: center;
     }
 
@@ -18,6 +19,7 @@
         color: var(--mainColor);
         font-weight: 500;
         font-size: 22px;
+        @include adaptive-value('font-size', 22, 16, 0);
         line-height: 1.5em;
         letter-spacing: 0.01em;
         transition: all 0.3s ease 0.1s;

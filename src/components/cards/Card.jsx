@@ -1,4 +1,4 @@
-import "./card.scss";
+// import "./card.scss";
 
 
 import arrow from "./../../img/icons/arrow.svg";

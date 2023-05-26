@@ -3,8 +3,13 @@
     border: 1px solid var(--mainColor);
     background-color: var(--mainColor);
     color: var(--mainWhite);
-    padding: 13px 22px 17px 22px;
-    font-size: 24px;
+    // padding: 13px 22px 17px 22px;
+    @include adaptive-value('padding-top', 13, 8, 0);
+    @include adaptive-value('padding-right', 22, 17, 0);
+    @include adaptive-value('padding-bottom', 17, 12, 0);
+    @include adaptive-value('padding-left',22, 17, 0);
+    @include adaptive-value('font-size', 24, 16, 0);
+    // font-size: 24px;
     letter-spacing: -3%;
     transition: all 0.3s ease-out;
     &:hover {

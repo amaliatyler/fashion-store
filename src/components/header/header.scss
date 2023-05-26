@@ -16,6 +16,7 @@
         span {
             font-weight: 900;
             font-size: 40px;
+            @include adaptive-value('font-size', 40, 30, 0);
             line-height: 1.5;
             letter-spacing: 0.03em;
             color: var(--mainColor);

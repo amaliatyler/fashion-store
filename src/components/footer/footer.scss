@@ -1,6 +1,7 @@
 .footer {
     background-color: #000;
-    padding: 120px 0 140px;
+    @include adaptive-value('padding-top', 120, 60, 0);
+    @include adaptive-value('padding-bottom', 140, 60, 0);
 
     &__body {
         display: flex;
@@ -14,7 +15,7 @@
 
     &__logo {
         font-weight: 900;
-        font-size: 40px;
+        @include adaptive-value('font-size', 40, 25, 0);
         line-height: 1.3em;
         color: var(--mainWhite);
         text-transform: uppercase;
@@ -24,7 +25,7 @@
     &__text {
         font-weight: 400;
         color: var(--mainGrey);
-        font-size: 20px;
+        @include adaptive-value('font-size', 20, 14, 0);
         line-height: 2em;
         margin-bottom: 32px;
         max-width: 415px;
@@ -61,12 +62,12 @@
     flex-basis: 50%;
 
     &__column:not(:last-child) {
-        margin-right:120px;
+        @include adaptive-value('margin-right', 120, 45, 0);
     }
 
     &__link {
         font-weight: 400;
-        font-size: 20px;
+        @include adaptive-value('font-size', 20, 14, 0);
         color: #8E8E8E;
         line-height: 1.5em;
         transition: all 0.6s ease;
@@ -79,7 +80,7 @@
 
         li {
             &:not(:last-child) {
-                margin-bottom: 32px;
+                @include adaptive-value('margin-bottom', 32, 20, 0);
             }
         }
     }
