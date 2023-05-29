@@ -1,8 +1,6 @@
 import logo from './../../img/icons/logo.svg';
 import Nav from '../nav/Nav';
 
-// import './header.scss';
-
 function Header () {
     return (
         <header className="header">

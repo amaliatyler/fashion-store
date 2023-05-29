@@ -3,7 +3,7 @@
     &__list {
         display: flex;
         column-gap: 65px;
-        @include adaptive-value('column-gap', 50, 25, 0);
+        @include adaptive-value('column-gap', 50, 15, 0);
         align-items: center;
     }
 
