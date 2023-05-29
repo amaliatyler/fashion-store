@@ -12,9 +12,9 @@
     }
 
     &__posts {
-        display: flex;
-        justify-content: space-between;
-        column-gap: 30px;
+        display: grid;
+        gap: 32px;
+        grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
     }
 
 }

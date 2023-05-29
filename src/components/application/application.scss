@@ -3,8 +3,11 @@
 
   &__content {
     display: flex;
-    column-gap: 24px;
+    gap: 24px;
     justify-content: space-around;
+    @media (max-width: $md4+px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__text {

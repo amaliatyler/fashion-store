@@ -5,6 +5,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: $md4+px) {
+            flex-wrap: wrap;
+        }
+        li {
+            @media (max-width: $md4+px) {
+                flex-basis: 33.33%;
+            }
+        }
         img {
             mix-blend-mode: multiply;
         }

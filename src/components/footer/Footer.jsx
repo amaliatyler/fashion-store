@@ -1,6 +1,5 @@
-// import './footer.scss';
+import Sprite from './../sprite/Sprite';
 
-import Sprite from '../sprite/Sprite';
 
 function Footer() {
   return (
