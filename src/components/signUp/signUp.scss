@@ -38,12 +38,13 @@
     &__input {
         display: block;
         @include adaptive-value('font-size', 24, 16, 0);
+        @include adaptive-value('font-size', 20, 16, 0);
         font-weight: 400;
         line-height: calc(35 / 24);
         color: #767676;
         @include adaptive-value('padding-top', 27, 20, 0);
         @include adaptive-value('padding-right', 27, 20, 0);
-        @include adaptive-value('padding-bottom', 35, 28, 0);
+        @include adaptive-value('padding-bottom', 27, 20, 0);
         @include adaptive-value('padding-left', 27, 20, 0);
         border-radius: 10px;
         background-color: #fff;
@@ -58,9 +59,10 @@
         padding: 15px 35px;
         position: absolute;
         font-size: 33px;
-        @include adaptive-value('font-size', 33, 20, 0);
-        right: 7px;
-        bottom: 7px;
+        @include adaptive-value('font-size', 24, 16, 0);
+        right: 2%;
+        bottom: 50%;
+        transform: translate(0, 50%);
         @media (max-width: $md4+px) {
             bottom: -100%;
             right: 50%;

@@ -58,9 +58,15 @@
         &-icon {
             border-radius: 15px;
             border: 1px solid #EBD96B;
-            background-color: #EBD96B;
+            background-color: #000;
+            fill: #EBD96B;
             width: 54px;
             height: 54px;
+            transition: all 0.6s ease;
+            &:hover {
+                background-color: #EBD96B;
+                fill: #000;
+            }
         }
     }
 

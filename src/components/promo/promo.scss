@@ -6,13 +6,17 @@
         column-gap: 24px;
         padding: 68px 0 0 120px;
         @include adaptive-value('padding-top', 68, 30, 0);
-        @include adaptive-value('padding-left', 120, 30, 0);
+        @include adaptive-value('padding-left', 80, 30, 0);
         border-radius: 60px;
         background-color: #F4F6F5;
+        @media (max-width: $md3+px) {
+            flex-wrap:wrap;
+          }
     }
 
     &__text {
         flex-basis: 50%;
+        @include adaptive-value('margin-bottom', 90, 30, 1);
     }
 
     &__title {
