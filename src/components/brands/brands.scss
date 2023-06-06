@@ -1,5 +1,6 @@
 .brands {
-    padding: 60px 0 55px;
+    @include adaptive-value('padding-top', 60, 30, 0);
+    @include adaptive-value('padding-bottom', 55, 30, 0);
     background-color: var(--mainYellow);
     &__list {
         display: flex;

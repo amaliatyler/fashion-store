@@ -1,5 +1,4 @@
-// import './promo.scss';
-import promoImg from './../../img/images/header-img.jpg';
+import promoImg from './../../img/images/header-img.png';
 import BtnLink from '../btn/BtnLink';
 
 function Promo() {
@@ -7,8 +6,7 @@ function Promo() {
         <section className="promo">
             <div className="container">
                 <div className="promo__content">
-                    <div className="promo__text">
-                        <h2 className="promo__title">
+                    <h2 className="promo__title">
                             <span className="highlight">
                                 <span>LET’S</span>
                             </span> EXPLORE 
@@ -16,6 +14,7 @@ function Promo() {
                                 <span>UNIQUE</span>
                             </span> CLOTHES.
                         </h2>
+                    <div className="promo__text">
                         <p className="promo__descr">Live for Influential and Innovative fashion!</p>
                         <div className="promo__btn-wrapper">
                             <BtnLink className='promo__btn' innerText="Shop Now" />
