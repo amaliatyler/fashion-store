@@ -5,6 +5,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         @include adaptive-value('column-gap', 62, 15, 1);
+        overflow: hidden;
     }
 
     &__img {
@@ -15,21 +16,32 @@
         @media(max-width: $md3+px) {
             grid-column: 1 / 2;
             grid-row: 2 / 3;
-    }
+            padding-top: 0;
+        }
+        @media(max-width: $md4+px) {
+            grid-column: 1 / 3;
+            grid-row: 3 / 4;
+            height: 185px;
+        }
         img {
             position: absolute;
             bottom: 0;
+            @media(max-width: $md4+px) {
+                position: unset;
+                width: 100%;
+                object-fit: contain;
+            }
         }
     }
 
     &__star {
         fill: white;
         fill-opacity: 0.5;
-        @include adaptive-value('width', 71, 30, 0);
-        @include adaptive-value('height', 71, 30, 0);
+        width: 71px;
+        height: 71px;
         transform: translate(50%);
         transition: all 0.3s ease 0.1s;
-        @media (max-width: $md4+px) {
+        @media (max-width: $md3+px) {
             display: none;
         }
         .shine {
@@ -39,16 +51,22 @@
             position: absolute;
             top: 84px;
             right: 123px;
+            @include adaptive-value('top', 84, 34, 0);
+            @include adaptive-value('right', 123, 70, 0);
         }
         &:nth-child(2) {
             position: absolute;
             top: 151px;
             left: 132px;
+            @include adaptive-value('top', 151, 100, 0);
+            @include adaptive-value('left', 132, 5, 0);
         }
         &:nth-child(3) {
             position: absolute;
             top: 639px;
             right: 86px;
+            @include adaptive-value('top', 639, 120, 0);
+            @include adaptive-value('right', 86, 30, 0);
         }
 
     }
@@ -59,7 +77,11 @@
         max-width: 666px;
         @media(max-width: $md3+px) {
             grid-column: 2 / 3;
-    }
+        }
+        @media(max-width: $md4+px) {
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+        }
     }
 
     &__title {
@@ -74,9 +96,25 @@
         @media(max-width: $md3+px) {
                 grid-column: 1 / 3;
         }
-        .highlight::before {
-            bottom: 25px;
-            right: -20px;
+        @media(max-width: $md4+px) {
+            grid-column: 1 / 3;
+        }
+        .highlight {
+            display: block;
+            line-height: calc(52/36);
+            &:before {
+                bottom: 25px;
+                right: 200px;
+                @media(max-width: $md4+px) {
+                    right: 106px;
+                    top: 5px;
+                    left: 0px;
+                    bottom: 8px;
+                }
+            }
+            span {
+                display: block;
+            }
         }
     }
 
@@ -112,17 +150,6 @@
         text-transform: uppercase;
         line-height: 1em;
         font-weight: 700;
-    }
-
-    .highlight {
-        line-height: calc(52/36);
-        display: block;
-        &:before {
-            right: 200px;
-        }
-        span {
-            display: block;
-        }
     }
 }
 
