@@ -7,12 +7,12 @@ import Favorite from "./components/favorite/Favorite";
 import Application from "./components/application/Application";
 import Footer from "./components/footer/Footer";
 import SignUp from "./components/signUp/SignUp";
-// import addShineClass from './utils/addShineClass';
+import NavFunc from "./utils/nav";
 
 function App() {
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header />
       <Promo />
       <Brands />
       <Arrivals />

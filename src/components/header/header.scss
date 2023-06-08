@@ -1,5 +1,7 @@
 .header {
-    padding: 46px 0 56px;
+    
+    @include adaptive-value('padding-top', 46, 20, 0);
+    @include adaptive-value('padding-bottom', 56, 20, 0);
 
     &__row {
         display: flex;
@@ -16,7 +18,7 @@
         span {
             font-weight: 900;
             font-size: 40px;
-            @include adaptive-value('font-size', 40, 30, 0);
+            @include adaptive-value('font-size', 40, 20, 0);
             line-height: 1.5;
             letter-spacing: 0.03em;
             color: var(--mainColor);
@@ -24,4 +26,91 @@
         }
     }
 
+    &__icon {
+        display: none;
+    }
+
+    .logo {
+        width: 32px;
+        height:30px;
+        fill: black;
+    }
+}
+
+@media (max-width:767px){
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+        padding: 15px 0 15px 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        min-height: 70px;
+        &__logo span {
+            color: #fff;
+            z-index: 21;
+        }
+        .logo {
+            fill: #fff;
+            z-index: 21;
+        }
+        &__row {
+            display: flex;
+        }
+        &__icon {
+            z-index: 20;
+            display: block;
+            position: relative;
+            width: 30px;
+            height: 18px;
+            cursor: pointer;
+            span,
+            &::before,
+            &::after {
+                left: 0;
+                position: absolute;
+                height: 10%;
+                width: 100%;
+                transition: all 0.3s ease 0s;
+                background-color: #fff;
+            }
+            &::before,
+            &::after {
+                content: '';
+            }
+
+            &::before {
+                top: 0;
+            }
+
+            &::after {
+                bottom: 0;
+            }
+
+            span {
+                top: 50%;
+                transform: scale(1) translate(0px, -50%);
+            }
+
+            /* при примененном классе активности */
+            /* анимация клика на бургер */
+            /* скрываем полоску посередине */
+            &._active {
+                span {
+                    transform: scale(0) translate(0px, -50%);
+                }
+                /* поворачиваем верхнюю полоску*/
+                &::before {
+                    top: 50%;
+                    transform: rotate(-45deg) translate(0px, -50%);
+                }
+                /* поворачиваем нижнюю полоску*/
+                &::after {
+                    bottom: 50%;
+                    transform: rotate(45deg) translate(0px, 50%);
+                }
+            }
+        }
+    }
 }

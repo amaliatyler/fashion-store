@@ -1,32 +1,91 @@
-.nav {
-
-    &__list {
-        display: flex;
-        column-gap: 65px;
-        @include adaptive-value('column-gap', 50, 15, 0);
-        align-items: center;
-    }
-
-    &__btn {
-        text-transform: uppercase;
-    }
-
-}
-
-.list {
-
-    &__link {
-        color: var(--mainColor);
-        font-weight: 500;
-        font-size: 22px;
-        @include adaptive-value('font-size', 22, 16, 0);
-        line-height: 1.5em;
-        letter-spacing: 0.01em;
-        transition: all 0.3s ease 0.1s;
-
-        &:hover {
-            color: var(--mainYellow);
+@media (max-width:767px){
+    .nav {
+        min-height: 70px;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 100px 30px 30px 30px;
+        transition: left 0.3s ease 0s;
+        // overflow: auto;
+        z-index: 15;
+        &._active {
+            left: 0;
+        }
+    
+        &__list > li {
+            flex-wrap: wrap;
+            margin: 0px 0px 30px 0px;
+        }
+    
+        &__btn {
+            border-radius: unset;
+            padding: unset;
+            font-size: 24px;
+            border: unset;
+            background-color: unset;
+            text-transform: uppercase;
+        }
+        &::before {
+            content: '';
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 20;
         }
     }
+    
+    .list {
+        &__link {
+            color: #fff;
+            font-size: 24px;
+        }
+    }
+}
 
+@media (min-width:767px){
+    .nav {
+        &__list {
+            display: flex;
+            column-gap: 65px;
+            @include adaptive-value('column-gap', 50, 10, 0);
+            align-items: center;
+            li {
+                position: relative;
+            }
+        }
+    
+        &__btn {
+            text-transform: uppercase;
+            @include adaptive-value('padding-top', 13, 5, 0);
+            @include adaptive-value('padding-right', 13, 5, 0);
+            @include adaptive-value('padding-bottom', 17, 5, 0);
+            @include adaptive-value('padding-left' , 22, 5, 0);
+            @include adaptive-value('font-size', 24, 10, 0);
+        }
+    
+    }
+    
+    .list {
+    
+        &__link {
+            color: var(--mainColor);
+            font-weight: 500;
+            font-size: 22px;
+            @include adaptive-value('font-size', 22, 13, 0);
+            line-height: 1.5em;
+            letter-spacing: 0.01em;
+            transition: all 0.3s ease 0.1s;
+    
+            &:hover {
+                color: var(--mainYellow);
+            }
+        }
+    
+    }
 }
