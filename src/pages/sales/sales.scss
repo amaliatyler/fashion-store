@@ -1,0 +1,19 @@
+
+.sales-page {
+
+    &__products {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+    }
+
+    &__subtitle {
+        // font-weight: 500;
+        // @include adaptive-value('font-size', 24, 14, 0);
+        // /* line-height: calc(48 / 32); */
+        // letter-spacing: -0.04em;
+        // @include adaptive-value('margin-bottom', 65, 20, 0);
+        // color: var(--mainGrey);
+    }
+}
+

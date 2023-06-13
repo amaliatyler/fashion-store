@@ -1,0 +1,13 @@
+
+
+.product {
+    
+    &__img {
+        width: 440px;
+        height: 640px;
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+}

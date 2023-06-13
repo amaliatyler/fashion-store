@@ -44,6 +44,7 @@
         &__link {
             color: #fff;
             font-size: 24px;
+            text-transform: uppercase;
         }
     }
 }
@@ -81,7 +82,8 @@
             line-height: 1.5em;
             letter-spacing: 0.01em;
             transition: all 0.3s ease 0.1s;
-    
+            cursor: pointer;
+            text-transform: uppercase;
             &:hover {
                 color: var(--mainYellow);
             }

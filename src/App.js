@@ -1,26 +1,29 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import ScrollToTop from "./utils/scrollToTop";
 import Header from "./components/header/Header";
-import Promo from "./components/promo/Promo";
-import Brands from "./components/brands/Brands";
-import Arrivals from "./components/arrivals/Arrivals";
-import Sale from "./components/sale/Sale";
-import Favorite from "./components/favorite/Favorite";
-import Application from "./components/application/Application";
 import Footer from "./components/footer/Footer";
-import SignUp from "./components/signUp/SignUp";
-import NavFunc from "./utils/nav";
+import SalesPage from "./pages/sales/Sales";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Promo />
-      <Brands />
-      <Arrivals />
-      <Sale />
-      <Favorite />
-      <Application />
-      <SignUp />
-      <Footer />
+      <div className="wrapper">
+        <Router>
+          <ScrollToTop />
+          <Header />
+          <main className="main">
+            <div className="container">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/sales" element={<SalesPage />} />
+              </Routes>
+            </div>
+          </main>
+          <Footer />
+        </Router>
+      </div>
     </div>
   );
 }

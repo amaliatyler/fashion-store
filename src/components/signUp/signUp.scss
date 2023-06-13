@@ -1,5 +1,4 @@
 .sign-up {
-    padding: 140px 0 155px 0;
     @include adaptive-value('padding-top', 140, 85, 0);
     @include adaptive-value('padding-bottom', 155, 80, 0);
     background-color: #E5C643;
@@ -67,6 +66,7 @@
             bottom: -120%;
             right: 50%;
             transform:translate(50%);
+            margin-bottom: 7px;
         }
     }
 
