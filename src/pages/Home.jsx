@@ -8,7 +8,7 @@ import Sale from "../components/sale/Sale";
 
 function Home() {
   return (
-    <div>
+    <>
       <Promo />
       <Brands />
       <Arrivals />
@@ -16,7 +16,7 @@ function Home() {
       <Favorite />
       <Application />
       <SignUp />
-    </div>
+    </>
   );
 }
 

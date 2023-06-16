@@ -1,19 +1,40 @@
 
-.sales-page {
+.discounts {
+
+    @include adaptive-value('padding-top', 100, 30, 0);
+    @include adaptive-value('padding-bottom', 100, 30, 0);
+
+    &__wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        @include adaptive-value('padding-left', 30, 10, 0);
+        @include adaptive-value('padding-right', 30, 10, 0);
+    }
+
+    &__title {
+        @include adaptive-value('margin-bottom', 35, 10, 0);
+    }
 
     &__products {
         display: grid;
-        gap: 32px;
-        grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
+        @include adaptive-value('gap', 35, 15, 0);
+        @media (max-width:$md3 + px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width:$md2 + px){
+            grid-template-columns: 1fr;
+        }
+
     }
 
     &__subtitle {
-        // font-weight: 500;
-        // @include adaptive-value('font-size', 24, 14, 0);
-        // /* line-height: calc(48 / 32); */
-        // letter-spacing: -0.04em;
-        // @include adaptive-value('margin-bottom', 65, 20, 0);
-        // color: var(--mainGrey);
+        display: block;
+        font-weight: 500;
+        @include adaptive-value('font-size', 24, 14, 0);
+        /* line-height: calc(48 / 32); */
+        letter-spacing: -0.04em;
+        color: var(--mainGrey);
     }
 }
 

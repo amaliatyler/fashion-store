@@ -14,12 +14,10 @@ function App() {
           <ScrollToTop />
           <Header />
           <main className="main">
-            <div className="container">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/sales" element={<SalesPage />} />
-              </Routes>
-            </div>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/sales" element={<SalesPage />} />
+            </Routes>
           </main>
           <Footer />
         </Router>

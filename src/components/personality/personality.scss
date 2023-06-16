@@ -1,0 +1,74 @@
+.personality {
+    @include adaptive-value('padding-top', 120, 30, 0);
+    @include adaptive-value('padding-bottom', 120, 30, 0);
+
+    &__wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        @include adaptive-value('padding-left', 40, 10, 0);
+        @include adaptive-value('padding-right', 40, 10, 0);
+    }
+
+    &__subtitle {
+
+        display: block;
+
+        &:first-child {
+            @include adaptive-value('font-size', 38, 20, 0);
+            @include adaptive-value('padding-bottom', 30, 10, 0);
+            color: #000;
+            font-weight: bold;
+        }
+
+        &:nth-child(2){
+            @include adaptive-value('font-size', 30, 16, 0);
+            @include adaptive-value('padding-bottom', 50, 10, 0);
+        }
+        
+    }
+
+    &__pic {
+        max-height: 700px;
+        width: auto;
+        overflow:hidden;
+        flex-basis: 47%;
+        @media (max-width:$md2 + px){
+            flex-basis: 100%;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media (max-width:$md2 + px){
+            gap:25px;
+        }
+    }
+
+    &__text {
+        @include adaptive-value('font-size', 20, 16, 0);
+        line-height: 2em;
+        flex-basis: 47%;
+        flex-basis: calc(50px - ((calc(20 + 60 * ((100vw - 320px) /  1780 - 320))) / 2));
+        text-align: justify;
+        @media (max-width:$md2 + px){
+            flex-basis: 100%;
+        }
+    }
+
+    &__rights {
+        display: block;
+        flex-basis: 100%;
+        color: var(--mainGrey);
+        @include adaptive-value('padding-top', 10, 5, 0);
+        @include adaptive-value('padding-bottom', 5, 3, 0);
+        @include adaptive-value('font-size', 14, 10, 0);
+    }
+
+}

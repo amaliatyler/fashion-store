@@ -1,4 +1,4 @@
-/* импорт стилевых файлов компонентов*/
+/* импорт стилевых файлов компонентов */
 
 @import './../components/application/application.scss';
 @import './../components/arrivals/arrivals.scss';
@@ -13,3 +13,10 @@
 @import './../components/promo/promo.scss';
 @import './../components/sale/sale.scss';
 @import './../components/signUp/signUp.scss';
+@import './../components/salesProduct/salesProduct.scss';
+@import './../components/personality/personality.scss';
+@import './../components/saleBanner/saleBanner.scss';
+
+/* импорт стилевых файлов страниц */
+
+@import './../pages/sales/sales.scss';

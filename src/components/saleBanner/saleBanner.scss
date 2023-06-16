@@ -1,0 +1,58 @@
+.banner {
+    background: top / cover no-repeat url('./../../img/sale-products/banner.jpg');
+    height: 600px;
+    @include adaptive-value('padding-top', 150, 70, 0);
+    @media (max-width:$md2 + px){
+        background-position: left top;
+        display: flex;
+    }
+
+    &__text-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, min-content);
+        align-items: center;
+        height: 100%;
+        @media (max-width:$md2 + px){
+            align-content: end;
+            padding-left: 10px;
+        }
+    }
+
+    &__title {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        font-size: 120px;
+        @include adaptive-value('font-size', 120, 60, 0);
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #fd89c8;
+        @include adaptive-value('margin-bottom', 15, 10, 0);
+        display: block;
+        line-height: 1em;
+        @media (max-width:$md2 + px) {
+            grid-column: 1 / 2;
+        }
+    }
+    
+    &__subtitle {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        @include adaptive-value('margin-bottom', 20, 10, 0);
+        @include adaptive-value('font-size', 28, 18, 0);
+        display: block;
+        @media (max-width:$md2 + px) {
+            grid-column: 1 / 2;
+        }
+    }
+    &__rights {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        color: var(--mainGrey);
+        @include adaptive-value('margin-bottom', 20, 10, 0);
+        display: block;
+        @media (max-width:$md2 + px) {
+            grid-column: 1 / 2;
+        }
+    }
+}
