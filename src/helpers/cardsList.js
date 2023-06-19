@@ -10,53 +10,71 @@ import card05 from './../img/categories/cat-05.jpg';
 
 import card06 from './../img/categories/cat-06.jpg';
 
-
 const cards = [
-    {   id: 1,
-        title: 'Hoodies & Sweetshirts',
+    {
+        id: 1,
+        title: 'Milk Hoodie',
         subtitle: 'Explore now!',
         img: card01,
         productsLink: '#!',
+        rightsOwner: 'Freepik',
+        newPrice: '25$',
+        oldPrice: '40$'
     },
+
     {
         id: 2,
-        title: 'Coats & Parka\'s',
+        title: 'Grey blaser',
         subtitle: 'Explore now!',
         img: card02,
         productsLink: '#!',
+        rightsOwner: 'bristekjegor',
+        newPrice: '55$',
+        oldPrice: '70$'
     },
+
     {
         id: 3,
-        title: 'Tees & T-Shirts',
+        title: 'Green jacket',
         subtitle: 'Explore now!',
         img: card03,
         productsLink: '#!',
+        rightsOwner: 'bristekjegor',
+        newPrice: '95$',
+        oldPrice: '140$'
     },
+
     {
         id: 4,
-        title: 'Milk Hoodie',
+        title: 'White jacket',
         subtitle: 'Explore now!',
         img: card04,
         productsLink: '#!',
-        imgRights: 'Freepik'
+        rightsOwner: 'bristekjegor',
+        newPrice: '55$',
+        oldPrice: '68$'
     },
 
     {
-        id: 6,
-        title: 'Grey blaser',
+        id: 5,
+        title: 'Black jacket',
         subtitle: 'Explore now!',
         img: card05,
         productsLink: '#!',
-        imgRights: 'bristekjegor'
+        rightsOwner: 'Freepik',
+        newPrice: '70$',
+        oldPrice: '110$'
     },
 
     {
         id: 6,
-        title: 'Green jacket',
+        title: 'Black hat',
         subtitle: 'Explore now!',
         img: card06,
         productsLink: '#!',
-        imgRights: 'bristekjegor'
+        rightsOwner: 'master1305',
+        newPrice: '15$',
+        oldPrice: '40$'
     },
 ]
 
