@@ -1,4 +1,21 @@
+// .arrivals {
+//   @include adaptive-value('padding-top', 120, 30, 0);
+//   @include adaptive-value('padding-bottom', 143, 30, 0);
+
+//   &__title {
+//     @include adaptive-value('margin-bottom', 100, 30, 0);
+
+//   }
+
+//   &__cards {
+//     display: grid;
+//     gap: 32px;
+//     grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+//   }
+// }
+
 .arrivals {
+
   @include adaptive-value('padding-top', 120, 30, 0);
   @include adaptive-value('padding-bottom', 143, 30, 0);
 
@@ -9,7 +26,8 @@
 
   &__cards {
     display: grid;
-    gap: 32px;
-    grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+    gap:32px;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
   }
+
 }

@@ -19,7 +19,9 @@ const cards = [
         productsLink: '#!',
         rightsOwner: 'Freepik',
         newPrice: '25$',
-        oldPrice: '40$'
+        oldPrice: '40$',
+        sale: true,
+        newItem: true,
     },
 
     {
@@ -30,7 +32,9 @@ const cards = [
         productsLink: '#!',
         rightsOwner: 'bristekjegor',
         newPrice: '55$',
-        oldPrice: '70$'
+        oldPrice: '70$',
+        sale: true,
+        newItem: true,
     },
 
     {
@@ -41,7 +45,9 @@ const cards = [
         productsLink: '#!',
         rightsOwner: 'bristekjegor',
         newPrice: '95$',
-        oldPrice: '140$'
+        oldPrice: '140$',
+        sale: true,
+        newItem: true,
     },
 
     {
@@ -52,7 +58,9 @@ const cards = [
         productsLink: '#!',
         rightsOwner: 'bristekjegor',
         newPrice: '55$',
-        oldPrice: '68$'
+        oldPrice: '68$',
+        sale: true,
+        newItem: true,
     },
 
     {
@@ -63,7 +71,9 @@ const cards = [
         productsLink: '#!',
         rightsOwner: 'Freepik',
         newPrice: '70$',
-        oldPrice: '110$'
+        oldPrice: '110$',
+        sale: true,
+        newItem: true,
     },
 
     {
@@ -74,7 +84,9 @@ const cards = [
         productsLink: '#!',
         rightsOwner: 'master1305',
         newPrice: '15$',
-        oldPrice: '40$'
+        oldPrice: '40$',
+        sale: true,
+        newItem: true,
     },
 ]
 

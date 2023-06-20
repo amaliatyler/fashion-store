@@ -9,7 +9,7 @@ function SalesProduct({ title, newPrice, oldPrice, img, rightsOwner }) {
                 <div className="product__img">
                     <img src={img} alt={title} />
                 </div>
-                <span className="product__img-rights">Image by {rightsOwner} on Freepik</span>
+                <span className="product__img-rights rights">Image by {rightsOwner} on Freepik</span>
                 <div className="product__footer">
                     <div className="product__text">
                         <div className="product__title">{title}</div>

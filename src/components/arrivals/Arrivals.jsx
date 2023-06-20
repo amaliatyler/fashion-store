@@ -35,6 +35,11 @@ function Arrivals() {
                             subtitle = {card.subtitle}
                             img= {card.img}
                             index={index}
+                            newPrice={card.newPrice}
+                            oldPrice={card.oldPrice}
+                            rightsOwner={card.rightsOwner}
+                            sale={card.sale}
+                            newItem={card.newItem}
                             />
                     })}
         </div>
