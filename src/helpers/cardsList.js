@@ -10,6 +10,10 @@ import card05 from './../img/categories/cat-05.jpg';
 
 import card06 from './../img/categories/cat-06.jpg';
 
+import card07 from './../img/categories/cat-07.jpg';
+
+import card08 from './../img/categories/cat-08.jpg';
+
 const cards = [
     {
         id: 1,
@@ -20,7 +24,7 @@ const cards = [
         rightsOwner: 'Freepik',
         newPrice: '25$',
         oldPrice: '40$',
-        sale: true,
+        sale: false,
         newItem: true,
     },
 
@@ -34,7 +38,7 @@ const cards = [
         newPrice: '55$',
         oldPrice: '70$',
         sale: true,
-        newItem: true,
+        newItem: false,
     },
 
     {
@@ -60,7 +64,7 @@ const cards = [
         newPrice: '55$',
         oldPrice: '68$',
         sale: true,
-        newItem: true,
+        newItem: false,
     },
 
     {
@@ -72,8 +76,8 @@ const cards = [
         rightsOwner: 'Freepik',
         newPrice: '70$',
         oldPrice: '110$',
-        sale: true,
-        newItem: true,
+        sale: false,
+        newItem: false,
     },
 
     {
@@ -87,6 +91,32 @@ const cards = [
         oldPrice: '40$',
         sale: true,
         newItem: true,
+    },
+
+    {
+        id: 7,
+        title: 'Beige turtleneck',
+        subtitle: 'Explore now!',
+        img: card07,
+        productsLink: '#!',
+        rightsOwner: 'Freepik',
+        newPrice: '45$',
+        oldPrice: '60$',
+        sale: true,
+        newItem: true,
+    },
+
+    {
+        id: 8,
+        title: 'Dark blue costume',
+        subtitle: 'Explore now!',
+        img: card08,
+        productsLink: '#!',
+        rightsOwner: 'senivpetro',
+        newPrice: '95$',
+        oldPrice: '150$',
+        sale: false,
+        newItem: false,
     },
 ]
 

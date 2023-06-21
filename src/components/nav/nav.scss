@@ -84,8 +84,18 @@
             transition: all 0.3s ease 0.1s;
             cursor: pointer;
             text-transform: uppercase;
+            position: relative;
+            @include hover-underline(#DEB887);
+        }
+
+        &__cart {
+            width: 35px;
+            height: 35px;
+            fill: black;
+            transition: all 0.3s ease 0.1s;
+            cursor: pointer;
             &:hover {
-                color: var(--mainYellow);
+               fill: var(--mainBeige);
             }
         }
     

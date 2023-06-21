@@ -26,7 +26,7 @@ function Arrivals() {
 
     <section className="arrivals">
       <div className="arrivals__container container">
-        <h2 className="arrivals__title section-title">New Arrivals</h2>
+        <h2 className="arrivals__title section-title">new arrivals</h2>
         <div className="arrivals__cards">
         {cards.map((card, index) => {
                         return <Card 

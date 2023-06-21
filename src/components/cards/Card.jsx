@@ -5,29 +5,15 @@ import arrow from "./../../img/icons/arrow.svg";
 
 function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem}) {
 
-  const labelNew = newItem ? 'New' : null;
-  const labelSale = sale ? 'Sale' : null;
-  return (
-    // <a href="#!">
-    //   <div className="card">
-    //     <img src={img} className="card__img" alt={title} />
-    //     <div className="card__body">
-    //       <div className="card__text">
-    //         <div className="card__title">{title}</div>
-    //         <div className="card__muted">{subtitle}</div>
-    //       </div>
-    //       <div className="card__icon">
-    //         <img src={arrow} alt="Arrow" />
-    //       </div>
-    //     </div>
-    //   </div>
-    // </a>
-    
+  const labelNew = newItem ? <div className="card__label card__label_new">New</div> : null;
+  const labelSale = sale ? <div className="card__label card__label_sale">Sale</div> : null;
+
+  return ( 
 
     <article className="card">
       <div className="card__labels">
-        <div className="card__label card__label_sale">{labelSale}</div>
-        <div className="card__label card__label_new">{labelNew}</div>
+        {labelSale}
+        {labelNew}
       </div>
       <a href="#!" className="card__image _pic">
         <img src={img} alt={title} />
@@ -41,9 +27,6 @@ function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem}) {
           <div className="card__price">{newPrice}</div>
           <div className="card__price_old">{oldPrice}</div>
         </div>
-        {/* <div className="card__icon">
-          <img src={arrow} alt="arrow" />
-        </div> */}
       </div>
     </article>
   );

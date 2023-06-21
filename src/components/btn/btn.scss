@@ -1,6 +1,5 @@
 .btn-link {
     border-radius: 7px;
-    border: 1px solid var(--mainColor);
     background-color: var(--mainColor);
     color: var(--mainWhite);
     // padding: 13px 22px 17px 22px;
@@ -13,7 +12,7 @@
     letter-spacing: -3%;
     transition: all 0.3s ease-out;
     &:hover {
-        background: var(--mainWhite);;
+        background: var(--mainBeige);;
         color: var(--mainColor);
     }
 }

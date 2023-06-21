@@ -1,7 +1,7 @@
 .brands {
     @include adaptive-value('padding-top', 60, 30, 0);
     @include adaptive-value('padding-bottom', 55, 30, 0);
-    background-color: var(--mainYellow);
+    background-color: #DEB887;
     &__list {
         display: flex;
         justify-content: space-between;
@@ -16,6 +16,7 @@
         }
         img {
             mix-blend-mode: multiply;
+            max-width: 100px;
         }
     }
 }
