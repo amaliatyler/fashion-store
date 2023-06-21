@@ -57,14 +57,14 @@
 
         &-icon {
             border-radius: 15px;
-            border: 1px solid #EBD96B;
+            border: 1px solid var(--mainBeige);
             background-color: #000;
-            fill: #EBD96B;
+            fill: var(--mainBeige);
             width: 54px;
             height: 54px;
             transition: all 0.6s ease;
             &:hover {
-                background-color: #EBD96B;
+                background-color: var(--mainBeige);
                 fill: #000;
             }
         }
@@ -91,7 +91,7 @@
         line-height: 1.5em;
         transition: all 0.6s ease;
         &:hover {
-            color: var(--mainYellow);
+            color: var(--mainBeige);
         }
     }
 
