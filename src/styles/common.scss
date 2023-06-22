@@ -1,6 +1,6 @@
 @import './mixins.scss';
 :root {
-  --mainColor: #000;
+  --mainColor: #141010;
   --mainWhite: #fff;
   --mainYellow: #ebd96b;
   --mainBeige: #DEB887;
@@ -90,4 +90,26 @@ body._lock {
   @include adaptive-value('padding-bottom', 5, 3, 0);
   @include adaptive-value('font-size', 14, 10, 0);
   color: var(--mainGrey);
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 15px;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+  min-height: 48px;
+  background: var(--mainBeige);
+
+  &_white {
+      color: black;
+      background-color: #fff;
+      @media (any-hover: hover) {
+          &:hover {
+              background-color: var(--mainBeige);
+              color: #fff;
+          }
+      }
+  }
 }

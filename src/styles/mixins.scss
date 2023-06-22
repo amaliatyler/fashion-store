@@ -32,20 +32,22 @@
 /*hover-эффект подчеркивания и смены цветы при наведении */
 
 @mixin hover-underline($color) {
+  @media (any-hover: hover) {
     &::before {
-        content: '';
-        bottom: 10px;
-        background-color: transparent;
-        position: absolute;
-        height: 3px;
-        width: 100%;
-        transition: all 0.3s ease-out;
+      content: "";
+      bottom: 10px;
+      background-color: transparent;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      transition: all 0.3s ease-out;
     }
     &:hover {
-        color: $color;
-        &::before {
-            bottom: 0px;
-            background-color: $color;
-        }
+      color: $color;
+      &::before {
+        bottom: 0px;
+        background-color: $color;
+      }
     }
+  }
 }

@@ -1,6 +1,7 @@
 // import "./card.scss";
 
 
+import Sprite from "../sprite/Sprite";
 import arrow from "./../../img/icons/arrow.svg";
 
 function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem}) {
@@ -26,6 +27,18 @@ function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem}) {
         <div className="card__prices">
           <div className="card__price">{newPrice}</div>
           <div className="card__price_old">{oldPrice}</div>
+        </div>
+        <div className="card__actions actions-card">
+           <div className="actions-card__body">
+           <a href="#!" className="actions-card__btn btn">See more</a>
+           <a href="#!" className="actions-card__link actions-card__link_share">
+            {/* Add to cart */}
+              <Sprite className="actions-card__icon" iconName="paperBag"/>
+           </a>
+           <a href="#!" className="actions-card__link actions-card__link_share">
+            <Sprite className="actions-card__icon" id="heart" iconName="heart"/>
+           </a>
+           </div>
         </div>
       </div>
     </article>
