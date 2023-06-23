@@ -38,7 +38,7 @@ body._lock {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1296px;
   margin: 0 auto;
   padding: 0 30px;
   @media (max-width: $md4+px) {
@@ -62,26 +62,12 @@ body._lock {
 }
 
 .section-title {
-  position: relative;
-  display: inline-block;
   font-weight: 900;
   @include adaptive-value('font-size', 48, 30, 0);
   line-height: 1.04;
   letter-spacing: 0.06em;
-  &::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    right: 0px;
-    bottom: 0px;
-    width: 190px;
-    height: 32px;
-    background-image: url("./../img/icons/decor-yellow.svg");
-    @media (max-width: $md4+px) {
-      right: unset;
-      left: 50px;
-    }
-  }
+  text-decoration: underline;
+  text-transform: lowercase;
 }
 
 .rights {

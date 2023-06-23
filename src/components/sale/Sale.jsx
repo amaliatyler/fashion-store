@@ -1,4 +1,4 @@
-import saleImg from './../../img/images/sale-img.png';
+import saleImg from './../../img/images/m_sale-img.png';
 
 import BtnLink from '../btn/BtnLink';
 import Sprite from '../sprite/Sprite';

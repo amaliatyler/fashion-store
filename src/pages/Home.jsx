@@ -1,5 +1,5 @@
 import Application from "../components/application/Application";
-import Arrivals from "../components/arrivals/Arrivals";
+import Popular from "../components/popular/Popular";
 import Brands from "../components/brands/Brands";
 import Favorite from "../components/favorite/Favorite";
 import Promo from "../components/promo/Promo";
@@ -10,10 +10,10 @@ function Home() {
   return (
     <>
       <Promo />
+      <Popular />
       <Brands />
-      <Arrivals />
-      <Sale />
       <Favorite />
+      <Sale />
       <Application />
       <SignUp />
     </>

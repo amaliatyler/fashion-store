@@ -85,7 +85,10 @@
             cursor: pointer;
             text-transform: uppercase;
             position: relative;
-            @include hover-underline(#DEB887);
+            /* TODO забрать отсюда медиа-запрос*/
+            @media (prefers-reduced-motion: no-preference) {
+                @include hover-underline(#DEB887);
+            }
         }
 
         &__cart {

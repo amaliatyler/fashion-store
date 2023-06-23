@@ -1,18 +1,18 @@
-import card01 from './../img/categories/cat-01.jpg';
+import card01 from './../img/popular/cat-01.jpg'
 
-import card02 from './../img/categories/cat-02.jpg';
+import card02 from './../img/popular/cat-02.jpg';
 
-import card03 from './../img/categories/cat-03.jpg';
+import card03 from './../img/popular/cat-03.jpg';
 
-import card04 from './../img/categories/cat-04.jpg';
+import card04 from './../img/popular/cat-04.jpg';
 
-import card05 from './../img/categories/cat-05.jpg';
+import card05 from './../img/popular/cat-05.jpg';
 
-import card06 from './../img/categories/cat-06.jpg';
+import card06 from './../img/popular/cat-06.jpg';
 
-import card07 from './../img/categories/cat-07.jpg';
+import card07 from './../img/popular/cat-07.jpg';
 
-import card08 from './../img/categories/cat-08.jpg';
+import card08 from './../img/popular/cat-08.jpg';
 
 const cards = [
     {

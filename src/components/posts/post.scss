@@ -10,6 +10,10 @@
         animation: slide 1.5s ease-in-out;
     }
 
+    &__img-wrapper {
+        padding: 0px 0px calc(180px/285px * 100%) 0px;
+    }
+
     &__img {
         @include adaptive-value('margin-bottom', 28, 15, 0);
         border-radius: 20px;

@@ -1,6 +1,6 @@
 .sale {
     // background: linear-gradient(1.32deg, #E0C340 0.13%, #DFC23E 3.97%, #E1C441 7.2%, #E3C743 10.13%, #E4C542 12.98%, #E6C744 15.99%, #E7C845 19.52%, #E5C643 23.96%, #E6C945 30.43%, #E3C743 36.49%, #E9CA48 42.49%, #EDCE49 49.35%, #F0D44C 55.42%, #F4D84F 61.43%, #F6DA52 65.74%, #F7DB53 72.23%, #F9DD55 77.43%, #F9DF56 83.84%, #FAE157 91.52%, #F9DF56 97.87%);
-    background-color: lightgrey;
+    background-color: var(--mainBeige);
     &__content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -26,6 +26,8 @@
         img {
             position: absolute;
             bottom: 0;
+            filter: grayscale(100%);
+            height: 100%;
             @media(max-width: $md4+px) {
                 position: unset;
                 width: 100%;
@@ -75,6 +77,7 @@
         @include adaptive-value('margin-bottom', 155, 30, 1);
         text-align: left;
         max-width: 666px;
+        color: white;
         @media(max-width: $md3+px) {
             grid-column: 2 / 3;
         }
@@ -87,7 +90,8 @@
     &__title {
         font-weight: 900;
         grid-column: 2 / 3;
-        @include adaptive-value('font-size', 96, 40, 1);
+        color: white;
+        @include adaptive-value('font-size', 66, 40, 1);
         line-height: calc(120 / 96);
         @include adaptive-value('margin-top', 128, 30, 1);
         @include adaptive-value('margin-bottom', 33, 10, 1);
@@ -121,7 +125,7 @@
     &__descr {
         font-weight: 500;
         @include adaptive-value('font-size', 36, 18, 1);
-        color: #231300;
+        color: black;
         @include adaptive-value('margin-bottom', 34, 10, 1);
     }
 

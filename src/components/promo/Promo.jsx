@@ -1,4 +1,4 @@
-import promoImg from './../../img/images/header-img.png';
+import promoImg from './../../img/images/promo.jpg';
 import BtnLink from '../btn/BtnLink';
 
 function Promo() {
@@ -20,9 +20,9 @@ function Promo() {
                             <BtnLink className='promo__btn' innerText="Shop Now" />
                         </div>
                     </div>
-                    <div className="promo__img">
+                    {/* <div className="promo__img">
                         <img src={promoImg} alt="Promo" />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
