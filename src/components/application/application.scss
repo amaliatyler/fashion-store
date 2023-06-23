@@ -1,18 +1,28 @@
 .application {
-  @include adaptive-value('margin-bottom', 220, 40, 0);
+  @include adaptive-value('padding-top', 100, 40, 0);
+  @include adaptive-value('padding-bottom', 100, 40, 0);
 
   &__content {
     display: flex;
-    gap: 24px;
     justify-content: space-around;
-    @media (max-width: $md4+px) {
-      flex-wrap: wrap;
-    }
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   &__text {
-    @include adaptive-value('margin-top', 270, 30, 0);
-    max-width: 507px;
+    flex-basis: 45%;
+    @media (max-width: $md2 + px) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__img {
+    flex-basis: 45%;
+    max-width:300px;
+    height: 500px;
+    img {
+      width: unset;
+    }
   }
 
   &__title {

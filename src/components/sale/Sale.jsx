@@ -1,7 +1,6 @@
 import saleImg from './../../img/images/m_sale-img.png';
 
 import BtnLink from '../btn/BtnLink';
-import Sprite from '../sprite/Sprite';
 
 function Sale() {
   return (
@@ -10,14 +9,10 @@ function Sale() {
             <div className="sale__content">
                 <div className="sale__img">
                     <img src={saleImg} alt="Girl" />
-                    {/* <Sprite className="sale__star" id="1" iconName="star"/>
-                    <Sprite className="sale__star" id="2" iconName="star"/>
-                    <Sprite className="sale__star" id="3" iconName="star"/> */}
                 </div>
                 <div className="sale__title">
-                        <span className="highlight">
-                            <span>Payday</span>
-                        </span>Sale Now
+                    <span>BLACK FRIDAY</span>
+                        <span>Sale Now</span>
                     </div>
                 <div className="sale__text">
                     <p className="sale__descr">Spend minimal $100 get 30% off

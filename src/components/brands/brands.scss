@@ -6,11 +6,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @media (max-width: $md4+px) {
+        @media (max-width: $md3+px) {
             flex-wrap: wrap;
         }
         li {
-            @media (max-width: $md4+px) {
+            @media (max-width: $md3+px) {
                 flex-basis: 33.33%;
             }
         }

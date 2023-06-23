@@ -26,7 +26,7 @@ function Application() {
                         </a>
                     </div>
                 </div>
-                <div className="application__img">
+                <div className="application__img _pic">
                     <img src={app} alt="App" />
                 </div>
             </div>

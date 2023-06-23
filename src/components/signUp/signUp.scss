@@ -1,7 +1,7 @@
 .sign-up {
     @include adaptive-value('padding-top', 140, 85, 0);
     @include adaptive-value('padding-bottom', 155, 80, 0);
-    background-color: #E5C643;
+    background-color: var(--mainBeige);
     color: var(--mainWhite);
 
     &__wrapper {

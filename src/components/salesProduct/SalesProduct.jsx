@@ -6,7 +6,7 @@ function SalesProduct({ title, newPrice, oldPrice, img, rightsOwner }) {
         <div className="product__item">
             <img src="" alt="" />
             <div className="product__body">
-                <div className="product__img">
+                <div className="product__img _pic">
                     <img src={img} alt={title} />
                 </div>
                 <span className="product__img-rights rights">Image by {rightsOwner} on Freepik</span>

@@ -192,9 +192,9 @@
         height: 28px;
         transition: all 0.3s ease-out;
         @media (any-hover: hover) {
-            fill: var(--mainBeige);
+            fill: white;
             &:hover {
-                fill: white;
+                fill: var(--mainBeige);
             }
         }
     }
@@ -202,10 +202,12 @@
     &__btn {
         flex-basis: 100%;
         margin-bottom: 10px;
+        background-color: white;
+        color: black;
         @media (any-hover: hover) {
             &:hover {
-                background-color: white;
-                color: black;
+                background-color: var(--mainBeige);
+                color: white;
             }
         }
     }
