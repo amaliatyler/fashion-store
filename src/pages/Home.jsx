@@ -5,6 +5,7 @@ import Favorite from "../components/favorite/Favorite";
 import Promo from "../components/promo/Promo";
 import SignUp from "../components/signUp/SignUp";
 import Sale from "../components/sale/Sale";
+import Bag from "../components/cart/Cart";
 
 function Home() {
   return (

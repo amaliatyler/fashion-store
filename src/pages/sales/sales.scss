@@ -3,6 +3,16 @@
 
     @include adaptive-value('padding-top', 100, 30, 0);
     @include adaptive-value('padding-bottom', 100, 30, 0);
+    
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__title {
+        flex-basis: 100%;
+    }
 
     &__wrapper {
         max-width: 1200px;

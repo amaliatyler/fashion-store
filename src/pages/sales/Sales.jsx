@@ -1,7 +1,10 @@
 import Personality from "../../components/personality/personality";
 import SaleBanner from "../../components/saleBanner/saleBanner";
 import SalesProduct from "../../components/salesProduct/SalesProduct";
+import Search from "../../components/search/Search";
+import Sprite from "../../components/sprite/Sprite";
 import { saleProducts } from "../../helpers/saleProductsList";
+
 
 function SalesPage() {
   return (
@@ -12,6 +15,7 @@ function SalesPage() {
           <div className="discounts__header">
             <h2 className="discounts__title section-title">SUMMER SALE</h2>
             <span className="discounts__subtitle">Save up to 50%!</span>
+            <Search className="discounts__search"/>
           </div>
           <div className="discounts__products product">
             {saleProducts.map((product, index) => {

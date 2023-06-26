@@ -1,0 +1,16 @@
+.search {
+
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+    padding: 3px;
+    border-radius: 6px;
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+        margin-left: 5px;
+        fill: var(--mainColor);
+    }
+}

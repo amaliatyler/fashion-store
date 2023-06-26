@@ -1,6 +1,6 @@
 .application {
-  @include adaptive-value('padding-top', 100, 40, 0);
-  @include adaptive-value('padding-bottom', 100, 40, 0);
+  @include adaptive-value("padding-top", 100, 40, 0);
+  @include adaptive-value("padding-bottom", 100, 40, 0);
 
   &__content {
     display: flex;
@@ -11,14 +11,14 @@
 
   &__text {
     flex-basis: 45%;
-    @media (max-width: $md2 + px) {
-      flex-basis: 100%;
-    }
+    // @media (max-width: $md2 + px) {
+    //   flex-basis: 100%;
+    // }
   }
 
   &__img {
     flex-basis: 45%;
-    max-width:300px;
+    max-width: 300px;
     height: 500px;
     img {
       width: unset;
@@ -27,26 +27,34 @@
 
   &__title {
     font-weight: 900;
-    @include adaptive-value('font-size', 48, 35, 0);
-    @include adaptive-value('margin-bottom', 40, 20, 0);
+    @include adaptive-value("font-size", 48, 35, 0);
+    @include adaptive-value("margin-bottom", 40, 20, 0);
   }
 
   &__descr {
     font-weight: 500;
-    @include adaptive-value('font-size', 24, 14, 0);
+    @include adaptive-value("font-size", 24, 14, 0);
     /* line-height: calc(48 / 32); */
     letter-spacing: -0.04em;
     margin-bottom: 65px;
-    @include adaptive-value('margin-bottom', 65, 20, 0);
+    @include adaptive-value("margin-bottom", 65, 20, 0);
     color: var(--mainGrey);
   }
 
   &__socials {
     display: flex;
     column-gap: 20px;
+    @media (max-width: $md3 + px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__link {
     display: inline-block;
+    &:not(:last-child) {
+      @media (max-width: $md3 + px) {
+        margin-bottom: 15px;
+      }
+    }
   }
 }

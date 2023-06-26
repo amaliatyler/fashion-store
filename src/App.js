@@ -5,11 +5,13 @@ import ScrollToTop from "./utils/scrollToTop";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import SalesPage from "./pages/sales/Sales";
+import Cart from "./components/cart/Cart";
 
 function App() {
   return (
     <div className="App">
       <div className="wrapper">
+        <Cart />
         <Router>
           <ScrollToTop />
           <Header />

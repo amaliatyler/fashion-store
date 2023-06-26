@@ -8,10 +8,13 @@
         align-items: center;
         @media (max-width: $md3+px) {
             flex-wrap: wrap;
+            gap: 10px;
         }
         li {
             @media (max-width: $md3+px) {
-                flex-basis: 33.33%;
+                flex-basis: 30%;
+                display: flex;
+                justify-content: center;
             }
         }
         img {
