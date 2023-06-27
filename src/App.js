@@ -5,13 +5,14 @@ import ScrollToTop from "./utils/scrollToTop";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import SalesPage from "./pages/sales/Sales";
-import Cart from "./components/cart/Cart";
+import CartItem from "./components/cartItem/CartItem";
+import CartPage from "./pages/cartPage/CartPage";
 
 function App() {
   return (
     <div className="App">
       <div className="wrapper">
-        <Cart />
+        {/* <Cart /> */}
         <Router>
           <ScrollToTop />
           <Header />
@@ -19,6 +20,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/sales" element={<SalesPage />} />
+              <Route path="/cart" element={<CartPage/>}/>
             </Routes>
           </main>
           <Footer />
