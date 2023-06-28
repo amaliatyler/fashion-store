@@ -12,7 +12,7 @@ function Nav(props) {
                 <li><NavLink to="/sales" className="list__link">SALE</NavLink></li>
                 <li><NavLink to="/cart" className="list__link">FAVOURITE</NavLink></li>
                 <li><NavLink to="#" className="list__link">LIFESTYLE</NavLink></li>
-                <li><NavLink to="/cart" className="list__link" >
+                <li><NavLink to="/cart" >
                     <Sprite className="list__cart" id="paper-bag" iconName="paperBag"/>
                     </NavLink>
                 </li>

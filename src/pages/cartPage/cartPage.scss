@@ -1,0 +1,39 @@
+.cart {
+    padding-top: 100px;
+    @include adaptive-value('padding-bottom', 100, 30, 0);
+    
+    &__title {
+        font-weight: bold;
+        @include adaptive-value('font-size', 30, 18, 1);
+        @include adaptive-value('margin-bottom', 20, 10, 1);
+    }
+
+    &__wrapper {
+        border: 1px dashed lightgrey;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        @include adaptive-value('gap', 50, 20, 1);
+    }
+    
+    &__btn {
+        width:fit-content;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+
+    }
+}
+
+.total {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    @include adaptive-value('font-size', 22, 18, 1);
+    font-weight: bold;
+    &__dash {
+        border-bottom: 1px solid black; 
+        opacity: 0.3;
+        flex: 1;
+    }
+}
