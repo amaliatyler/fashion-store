@@ -22,6 +22,8 @@ function Arrivals() {
                             rightsOwner={card.rightsOwner}
                             sale={card.sale}
                             newItem={card.newItem}
+                            onAddToFavorite={() => alert('Товар добавлен в избранное')}
+                            onAddToCart={() => alert('Товар добавлен в корзину')}
                             />
                     })}
         </div>

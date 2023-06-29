@@ -73,6 +73,12 @@
     }
     
     .list {
+
+        li {
+            &._active a {
+                color: var(--mainBeige);
+            }
+        }
     
         &__link {
             color: var(--mainColor);
@@ -86,9 +92,7 @@
             text-transform: uppercase;
             position: relative;
             /* TODO забрать отсюда медиа-запрос*/
-            @media (prefers-reduced-motion: no-preference) {
-                @include hover-underline(#DEB887);
-            }
+            @include hover-underline(#DEB887);
         }
 
         &__cart {

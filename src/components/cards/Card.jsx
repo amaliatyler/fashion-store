@@ -2,9 +2,10 @@
 
 
 import Sprite from "../sprite/Sprite";
+import Heart from "../ui/heart/Heart";
 import arrow from "./../../img/icons/arrow.svg";
 
-function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem}) {
+function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem, onAddToCart, onAddToFavorite}) {
 
   const labelNew = newItem ? <div className="card__label card__label_new">New</div> : null;
   const labelSale = sale ? <div className="card__label card__label_sale">Sale</div> : null;
@@ -31,12 +32,12 @@ function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem}) {
         <div className="card__actions actions-card">
            <div className="actions-card__body">
            <a href="#!" className="actions-card__btn btn">See more</a>
-           <a href="#!" className="actions-card__link actions-card__link_share">
+           <a href="#!" className="actions-card__link actions-card__link_cart" onClick={onAddToCart}>
             {/* Add to cart */}
               <Sprite className="actions-card__icon" iconName="paperBag"/>
            </a>
-           <a href="#!" className="actions-card__link actions-card__link_share">
-            <Sprite className="actions-card__icon" id="heart" iconName="heart"/>
+           <a href="#!" className="actions-card__link actions-card__link_favorite" onClick={onAddToFavorite}>
+            <Heart />
            </a>
            </div>
         </div>

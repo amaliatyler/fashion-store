@@ -1,0 +1,29 @@
+
+.heart {
+        width: 16px;
+        height: 16px;
+        background-color: #dddbdb;
+        transform: rotate(45deg);
+        position: relative;
+        cursor: pointer;
+
+        &:before, &:after {
+                content: '';
+                display: block;
+                width: 16px;
+                height: 16px;
+                background-color: #dddbdb;
+                border-radius: 50%;
+                position: absolute;
+        }
+
+        &:before {
+                top: -8px;
+                left: 0;
+        }
+
+        &:after {
+                top: 0;
+                left: -8px;
+        }
+}
