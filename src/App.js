@@ -6,6 +6,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import SalesPage from "./pages/sales/Sales";
 import CartPage from "./pages/cartPage/CartPage";
+import Drawer from "./components/drawer/Drawer";
 
 // function App() {
 //   return (
@@ -33,6 +34,7 @@ function App() {
   return(
     <div className="App">
       <div className="wrapper">
+        <Drawer />
         <Header />
           <Routes>
             <Route path="/" element={<Home />} />
