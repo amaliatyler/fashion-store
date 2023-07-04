@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -31,10 +32,13 @@ import Drawer from "./components/drawer/Drawer";
 // }
 
 function App() {
+
+  const [cartOpened, setCartOpened] = React.useState(false);
+
   return(
     <div className="App">
       <div className="wrapper">
-        <Drawer />
+       {cartOpened ?  <Drawer /> : null}
         <Header />
           <Routes>
             <Route path="/" element={<Home />} />

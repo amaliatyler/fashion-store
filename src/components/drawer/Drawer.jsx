@@ -1,3 +1,4 @@
+import BtnLink from "../btn/BtnLink";
 import CartItem from "../cartItem/CartItem";
 import { cartItems } from "./../../helpers/cartItemsList";
 
@@ -21,6 +22,12 @@ function Drawer() {
               );
             })}
           </div>
+          <div className="cart__total total">
+            <div className="total__text">Total price:</div>
+            <div className="total__dash"></div>
+            <div className="total__price">175$</div>
+          </div>
+          <BtnLink className="cart__btn" innerText="Pay now" />
         </div>
       </div>
     </div>

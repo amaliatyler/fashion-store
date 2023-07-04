@@ -37,7 +37,7 @@ function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem, onAdd
               <Sprite className="actions-card__icon" iconName="paperBag"/>
            </a>
            <a href="#!" className="actions-card__link actions-card__link_favorite" onClick={onAddToFavorite}>
-            <Heart />
+            <Sprite className="actions-card__icon" iconName="heart" />
            </a>
            </div>
         </div>

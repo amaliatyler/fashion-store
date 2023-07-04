@@ -23,4 +23,10 @@
                 @include adaptive-value('margin-bottom', 30, 15, 1);
                 font-weight: bold;
         }
+
+        &__wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+        }
 }
