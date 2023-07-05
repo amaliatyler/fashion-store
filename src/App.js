@@ -9,37 +9,16 @@ import SalesPage from "./pages/sales/Sales";
 import CartPage from "./pages/cartPage/CartPage";
 import Drawer from "./components/drawer/Drawer";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <div className="wrapper">
-//         {/* <Cart /> */}
-//         <Router>
-//           <ScrollToTop />
-//           <Header />
-//           <main className="main">
-//             <Routes>
-//               <Route path="/" element={<Home />} />
-//               <Route path="/sales" element={<SalesPage />} />
-//               <Route path="/cart" element={<CartPage/>}/>
-//             </Routes>
-//           </main>
-//           <Footer />
-//         </Router>
-//       </div>
-//     </div>
-//   );
-// }
 
 function App() {
 
-  const [cartOpened, setCartOpened] = React.useState(false);
+  const [isDrawerOpened, setIsDrawerOpened] = React.useState(false);
 
   return(
     <div className="App">
       <div className="wrapper">
-       {cartOpened ?  <Drawer /> : null}
-        <Header />
+       {isDrawerOpened ?  <Drawer /> : null}
+        <Header handleCartClick={()=> {setIsDrawerOpened(true)}}/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sales" element={<SalesPage />} />

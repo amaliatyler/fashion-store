@@ -3,16 +3,16 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import BtnLink from '../btn/BtnLink';
 import Sprite from '../sprite/Sprite';
 
-function Nav(props) {
+function Nav({className, handleCartClick}) {
 
     return(
-        <nav className={`nav ${props.className}`}>
+        <nav className={`nav ${className}`}>
             <ul className="nav__list list">
                 <CustomLink to="/" className="list__link">HOME</CustomLink>
                 <CustomLink to="/sales" className="list__link">SALE</CustomLink>
                 <CustomLink to="/favorite" className="list__link">FAVOURITE</CustomLink>
                 <CustomLink to="/lifestyle" className="list__link">LIFESTYLE</CustomLink>
-                <CustomLink to="/cart" className="list__link icon__link">
+                <CustomLink to="/cart" className="list__link icon__link" onClick={handleCartClick}>
                     <Sprite className="list__cart" id="paper-bag" iconName="paperBag"/>
                     </CustomLink>
             </ul>

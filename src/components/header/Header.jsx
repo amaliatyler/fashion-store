@@ -1,7 +1,7 @@
 import Nav from '../nav/Nav';
 import Sprite from '../sprite/Sprite';
 
-function Header () {
+function Header ({handleCartClick}) {
     return (
         <header className="header">
             <div className="container">
@@ -10,7 +10,7 @@ function Header () {
                         <Sprite id="logo" className="logo" iconName="logo"/>
                         <span>Fashion</span>
                     </div>
-                    <Nav className="header__nav"/>
+                    <Nav handleCartClick={handleCartClick} className="header__nav"/>
                     <div className="header__icon">
                         <span></span>
                     </div>
