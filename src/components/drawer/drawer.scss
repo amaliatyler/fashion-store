@@ -18,9 +18,15 @@
         box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
         @include adaptive-value('padding', 30, 15, 1);
 
+        &__header {
+                display: flex;
+                justify-content: space-between;
+                @include adaptive-value('margin-bottom', 30, 15, 1);
+                align-items: center;
+        }
+
         &__title {
                 @include adaptive-value('font-size', 24, 18, 1);
-                @include adaptive-value('margin-bottom', 30, 15, 1);
                 font-weight: bold;
         }
 
@@ -28,5 +34,21 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+        }
+
+        &__button {
+                &:hover {
+                        color: var(--mainBeige);
+                }
+        }
+}
+
+.button {
+        &__symbol {
+                @include adaptive-value('font-size', 38, 28, 1); 
+                transition: all 0.2s ease 0.2s;
+                &:hover {
+                        color: var(--mainBeige);
+                }
         }
 }

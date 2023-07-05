@@ -1,13 +1,31 @@
 import BtnLink from "../btn/BtnLink";
 import CartItem from "../cartItem/CartItem";
 import { cartItems } from "./../../helpers/cartItemsList";
+import { useEffect } from 'react';
 
-function Drawer() {
+function Drawer({onClose}) {
+
+  useEffect(() => {
+    // Добавляем класс к тегу body при рендере компонента
+    document.body.classList.add('_lock');
+
+    // Удаляем класс из тега body при размонтировании компонента
+    return () => {
+      document.body.classList.remove('_lock');
+    };
+  }, []);
+
   return (
     <div className="overlay">
       <div className="drawer">
         <div className="drawer__wrapper">
-          <h2 className="drawer__title">Your cart</h2>
+          <div className="drawer__header">
+            <h2 className="drawer__title">Your cart</h2>
+            <button onClick={onClose} type="drawer__button button">
+              <span class="sr-only">Close</span>
+              <span className="button__symbol" aria-hidden="true">×</span>
+            </button>
+          </div>
           <div className="drawer__items">
             {cartItems.map((item, index) => {
               return (
