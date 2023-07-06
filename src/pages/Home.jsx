@@ -7,6 +7,7 @@ import SignUp from "../components/signUp/SignUp";
 import Sale from "../components/sale/Sale";
 
 function Home() {
+
   return (
     <>
       <Promo />

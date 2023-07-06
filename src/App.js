@@ -12,13 +12,12 @@ import Drawer from "./components/drawer/Drawer";
 function App() {
 
   const [isDrawerOpened, setIsDrawerOpened] = React.useState(false);
-
-  
+  const [cartItems, setCartItems] = React.useState([]);
 
   return(
     <div className="App">
       <div className="wrapper">
-       {isDrawerOpened && <Drawer onClose={() => setIsDrawerOpened(false)}/>}
+       {isDrawerOpened && <Drawer items={cartItems} onClose={() => setIsDrawerOpened(false)}/>}
         <Header handleCartClick={()=> {setIsDrawerOpened(true)}}/>
           <Routes>
             <Route path="/" element={<Home />} />

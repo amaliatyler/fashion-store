@@ -12,9 +12,12 @@ function Nav({className, handleCartClick}) {
                 <CustomLink to="/sales" className="list__link">SALE</CustomLink>
                 <CustomLink to="/favorite" className="list__link">FAVOURITE</CustomLink>
                 <CustomLink to="/lifestyle" className="list__link">LIFESTYLE</CustomLink>
-                <CustomLink to="/cart" className="list__link icon__link" onClick={handleCartClick}>
+                {/* <CustomLink to="/cart/" className="list__link icon__link" onClick={handleCartClick}>
                     <Sprite className="list__cart" id="paper-bag" iconName="paperBag"/>
-                    </CustomLink>
+                </CustomLink> */}
+                <li className="list__link icon__link" onClick={handleCartClick}>
+                    <Sprite className="list__cart" id="paper-bag" iconName="paperBag"/>
+                </li>
             </ul>
         </nav>
     )

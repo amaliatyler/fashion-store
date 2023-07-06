@@ -1,9 +1,8 @@
 import BtnLink from "../btn/BtnLink";
 import CartItem from "../cartItem/CartItem";
-import { cartItems } from "./../../helpers/cartItemsList";
 import { useEffect } from 'react';
 
-function Drawer({onClose}) {
+function Drawer({onClose, cartItems, items = []}) {
 
   useEffect(() => {
     // Добавляем класс к тегу body при рендере компонента
@@ -18,7 +17,7 @@ function Drawer({onClose}) {
   return (
     <div className="overlay">
       <div className="drawer">
-        <div className="drawer__wrapper">
+        {/* <div className="drawer__wrapper"> */}
           <div className="drawer__header">
             <h2 className="drawer__title">Your cart</h2>
             <button onClick={onClose} type="drawer__button button">
@@ -27,7 +26,7 @@ function Drawer({onClose}) {
             </button>
           </div>
           <div className="drawer__items">
-            {cartItems.map((item, index) => {
+            {items.map((item, index) => {
               return (
                 <CartItem
                   key={index}
@@ -45,8 +44,8 @@ function Drawer({onClose}) {
             <div className="total__dash"></div>
             <div className="total__price">175$</div>
           </div>
-          <BtnLink className="cart__btn" innerText="Pay now" />
-        </div>
+          <BtnLink className="drawer__btn" innerText="Pay now" />
+        {/* </div> */}
       </div>
     </div>
   );

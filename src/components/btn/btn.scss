@@ -2,6 +2,7 @@
     border-radius: 3px;
     background-color: var(--mainColor);
     color: var(--mainWhite);
+    font-weight: bold;
     // padding: 13px 22px 17px 22px;
     @include adaptive-value('padding-top', 13, 8, 0);
     @include adaptive-value('padding-right', 22, 17, 0);
