@@ -1,9 +1,18 @@
+import React from 'react';
+
 import Sprite from "../sprite/Sprite";
 
-function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem, onAddToCart, onAddToFavorite}) {
+function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem, onPlus, onAddToFavorite}) {
 
   const labelNew = newItem ? <div className="card__label card__label_new">New</div> : null;
   const labelSale = sale ? <div className="card__label card__label_sale">Sale</div> : null;
+
+  // const [isAdded, setIsAdded] = React.useState(false);
+
+  // const onClickPlus = () => {
+  //   onPlus({ title, img, newPrice, oldPrice }) ;
+  //     setIsAdded( !isAdded);
+  // }
 
   return ( 
 
@@ -27,8 +36,7 @@ function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem, onAdd
         <div className="card__actions actions-card">
            <div className="actions-card__body">
            <a href="#!" className="actions-card__btn btn">See more</a>
-           <a href="#!" className="actions-card__link actions-card__link_cart" onClick={onAddToCart}>
-            {/* Add to cart */}
+           <a href="#!" className="actions-card__link actions-card__link_cart" onClick={console.log('add onClickPlus later')}>
               <Sprite className={'actions-card__icon cart-icon'} iconName="paperBag"/>
            </a>
            <a href="#!" className="actions-card__link actions-card__link_favorite" onClick={onAddToFavorite}>

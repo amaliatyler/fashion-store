@@ -5,7 +5,7 @@ import Card from "../cards/Card";
 // import {cards} from '../../helpers/cardsList';
 
 function Arrivals() {
-  const [items, setCards] = React.useState([]);
+  const [items, setItems] = React.useState([]);
 
   /* отправляем запрос на бэкенд только при первом рендере */
   React.useEffect(() => {
@@ -14,13 +14,15 @@ function Arrivals() {
         return res.json();
       })
       .then((json) => {
-        setCards(json);
+        setItems(json);
       });
   }, []);
 
-  const onAddToCart = () => {
-    alert("Товар добавлен в корзину");
-  }
+  // const onAddToCart = (obj) => {
+  //   setCartItems([...cartItems, obj]);
+  // }
+
+  console.log(items);
 
   return (
     <section className="arrivals">
@@ -41,7 +43,7 @@ function Arrivals() {
                 sale={item.sale}
                 newItem={item.newItem}
                 onAddToFavorite={() => alert("Товар добавлен в избранное")}
-                onAddToCart={onAddToCart}
+                // onPlus={(obj) => onAddToCart(obj)}
               />
             );
           })}

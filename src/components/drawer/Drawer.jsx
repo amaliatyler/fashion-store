@@ -2,7 +2,7 @@ import BtnLink from "../btn/BtnLink";
 import CartItem from "../cartItem/CartItem";
 import { useEffect } from 'react';
 
-function Drawer({ onClose, cartItems, items = [] }) {
+function Drawer({ onClose, items = [] }) {
 
   useEffect(() => {
     // Добавляем класс к тегу body при рендере компонента
