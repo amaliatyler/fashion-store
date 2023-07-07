@@ -171,9 +171,27 @@
         font-size: 16px;
         font-weight: bold;
         transition: all 0.3s ease-out;
+        position: relative;
         @media (any-hover: hover) {
             &:hover {
                 color: black;
+            }
+        }
+        &_cart {
+            /* счетчик в корзине */
+            &::before   {
+                content: '1';
+                width: 20px;
+                height: 20px;
+                background-color: black;
+                color: white;
+                border-radius: 50%;
+                position: absolute;
+                z-index: 10;
+                font-size: 12px;
+                text-align: center;
+                right: -10px;
+                top: -5px;
             }
         }
 
@@ -192,12 +210,34 @@
         width: 28px;
         height: 28px;
         transition: all 0.3s ease-out;
+    }
+
+    &__icon.cart-icon {
         @media (any-hover: hover) {
             fill: white;
+            stroke: white;
             &:hover {
-                fill: pink;
+                fill: var(--mainBeige);
+            }
+            &:active {
+                fill: black;
             }
         }
+    }
+
+    &__icon.heart {
+            @media (any-hover: hover) {
+                fill: none;
+                stroke: white;
+                &:hover {
+                    fill: var(--mainBeige);
+                    stroke: var(--mainBeige);
+                }
+                &:active {
+                    fill: black;
+                    stroke: black;
+                }
+            }
     }
 
     &__btn {
