@@ -1,6 +1,6 @@
 import saleImg from './../../img/images/m_sale-img.png';
 
-import BtnLink from '../btn/BtnLink';
+import BtnLink from '../ui/btn/BtnLink';
 
 function Sale() {
   return (

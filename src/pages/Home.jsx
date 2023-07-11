@@ -6,12 +6,12 @@ import Promo from "../components/promo/Promo";
 import SignUp from "../components/signUp/SignUp";
 import Sale from "../components/sale/Sale";
 
-function Home() {
+function Home({ onPlus, items }) {
 
   return (
     <>
       <Promo />
-      <Popular />
+      <Popular onPlus={onPlus} items={items} />
       <Brands />
       <Favorite />
       <Sale />

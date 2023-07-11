@@ -1,4 +1,4 @@
-import BtnLink from "../btn/BtnLink";
+import BtnLink from "../ui/btn/BtnLink";
 import CartItem from "../cartItem/CartItem";
 import { useEffect } from 'react';
 

@@ -1,7 +1,7 @@
 .header {
     
-    @include adaptive-value('padding-top', 46, 20, 0);
-    @include adaptive-value('padding-bottom', 56, 20, 0);
+    @include adaptive-value('padding-top', 20, 20, 0);
+    @include adaptive-value('padding-bottom', 20, 20, 0);
 
     &__row {
         display: flex;

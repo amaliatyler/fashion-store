@@ -1,4 +1,4 @@
-import BtnLink from "../../components/btn/BtnLink";
+import BtnLink from "../../components/ui/btn/BtnLink";
 import CartItem from "../../components/cartItem/CartItem";
 import Sprite from "../../components/sprite/Sprite";
 import { cartItems } from "../../helpers/cartItemsList";

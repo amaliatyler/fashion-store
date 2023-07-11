@@ -1,12 +1,14 @@
 import Sprite from "../sprite/Sprite";
+import CloseBtn from "../ui/closeBtn/CloseBtn";
 
 
-function Search(props) {
+function Search({className, searchValue, handleInput, setSearchValue }) {
 
     return (
-        <div className={props.className + " search"}>
+        <div className={className + " search"}>
             <Sprite className="search__icon" id="search" iconName="search"/>
-            <input type="text" placeholder="Search..." className="search__input"/>
+            <input onChange={handleInput} type="text" value={searchValue} placeholder="Search..." className="search__input"/>
+            <CloseBtn searchValue={searchValue} setSearchValue={setSearchValue} />
         </div>
     )
 }

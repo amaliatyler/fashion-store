@@ -1,28 +1,7 @@
 import React from "react";
-import Card from "../cards/Card";
-// import './arrivals.scss';
+import Card from '../cards/Card';
 
-// import {cards} from '../../helpers/cardsList';
-
-function Arrivals() {
-  const [items, setItems] = React.useState([]);
-
-  /* отправляем запрос на бэкенд только при первом рендере */
-  React.useEffect(() => {
-    fetch("https://64a582c300c3559aa9bfd40f.mockapi.io/items")
-      .then((res) => {
-        return res.json();
-      })
-      .then((json) => {
-        setItems(json);
-      });
-  }, []);
-
-  // const onAddToCart = (obj) => {
-  //   setCartItems([...cartItems, obj]);
-  // }
-
-  console.log(items);
+function Arrivals({ onPlus, items = [] }) {
 
   return (
     <section className="arrivals">
@@ -42,8 +21,7 @@ function Arrivals() {
                 rightsOwner={item.rightsOwner}
                 sale={item.sale}
                 newItem={item.newItem}
-                onAddToFavorite={() => alert("Товар добавлен в избранное")}
-                // onPlus={(obj) => onAddToCart(obj)}
+                onPlus={onPlus}
               />
             );
           })}

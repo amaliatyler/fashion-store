@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import axios from 'axios';
 
 import Home from "./pages/Home";
 import ScrollToTop from "./utils/scrollToTop";
@@ -11,18 +12,37 @@ import Drawer from "./components/drawer/Drawer";
 
 function App() {
 
+  const [items, setItems] = React.useState([]);
   const [isDrawerOpened, setIsDrawerOpened] = React.useState(false);
-  // const [cartItems, setCartItems] = React.useState([]);
-  // добавить в атрибуты Drawer позже items={cartItems} setCartItems={setCartItems} 
+  const [cartItems, setCartItems] = React.useState([]);
+
+  /* отправляем запрос на бэкенд только при первом рендере */
+  React.useEffect(() => {
+    axios.get('https://64a582c300c3559aa9bfd40f.mockapi.io/items').then((res) => {
+      setItems(res.data)
+    })
+
+}, []);
+
+  const onAddToCart = (obj) => {
+    setCartItems(prev => [...prev, obj]);
+  }
+
+  /* обработка поля поиска */
+  const [searchValue, setSearchValue] = React.useState('');
+
+  const handleInput = (event) => {
+    setSearchValue(event.target.value);
+  }
 
   return(
     <div className="App">
       <div className="wrapper">
-       {isDrawerOpened && <Drawer onClose={() => setIsDrawerOpened(false)}/>}
+       {isDrawerOpened && <Drawer onClose={() => setIsDrawerOpened(false)} items={cartItems} setCartItems={setCartItems} />}
         <Header handleCartClick={()=> {setIsDrawerOpened(true)}}/>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/sales" element={<SalesPage />} />
+            <Route path="/" element={<Home onPlus={(obj) => onAddToCart(obj)} items={items} />} />
+            <Route path="/sales" element={<SalesPage searchValue={searchValue} setSearchValue={setSearchValue} handleInput={handleInput} />} />
             <Route path="/cart" element={<CartPage/>}/>
           </Routes>
         <Footer />

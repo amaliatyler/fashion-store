@@ -1,5 +1,5 @@
 import promoImg from './../../img/images/promo.jpg';
-import BtnLink from '../btn/BtnLink';
+import BtnLink from '../ui/btn/BtnLink';
 
 function Promo() {
     return (

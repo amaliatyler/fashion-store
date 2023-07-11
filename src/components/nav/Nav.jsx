@@ -1,6 +1,6 @@
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
-import BtnLink from '../btn/BtnLink';
+import BtnLink from '../ui/btn/BtnLink';
 import Sprite from '../sprite/Sprite';
 
 function Nav({className, handleCartClick}) {
