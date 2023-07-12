@@ -48,4 +48,6 @@
         <path d="M6 6L18 18" stroke="#000000" stroke-linecap="round"/>
         <path d="M18 6L6.00001 18" stroke="#000000" stroke-linecap="round"/>
     </symbol>
+    <symbol id="broken-heart">
+    </symbol>
 </svg>

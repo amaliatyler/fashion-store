@@ -12,10 +12,10 @@
 .drawer {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        // justify-content: space-between;
         position: absolute;
         flex-wrap: wrap;
-        width: 385px;
+        width: 420px;
         height: 100vh;
         right: 0;
         background-color: #ffffff;
@@ -71,4 +71,25 @@
         &__btn {
                 text-align: center;
         }
+}
+
+.cart-empty {
+        text-align: center;
+        padding: 20px 0;
+        &__icon {
+                width: 40px;
+                height: 40px;
+                @include adaptive-value('margin-bottom', 40, 20, 1); 
+        }
+
+        &__title {
+                @include adaptive-value('font-size', 24, 18, 1);
+                font-weight: bold;
+                @include adaptive-value('margin-bottom', 20, 15, 1); 
+        }
+
+        &__text {
+                @include adaptive-value('margin-bottom', 30, 15, 1);      
+        }
+
 }

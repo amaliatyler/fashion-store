@@ -1,8 +1,9 @@
 import BtnLink from "../ui/btn/BtnLink";
 import CartItem from "../cartItem/CartItem";
 import { useEffect } from 'react';
+import sadface from './sadface.svg';
 
-function Drawer({ onClose, items = [] }) {
+function Drawer({ onClose, onRemoveFromCart, items = [] }) {
 
   useEffect(() => {
     // Добавляем класс к тегу body при рендере компонента
@@ -17,35 +18,47 @@ function Drawer({ onClose, items = [] }) {
   return (
     <div className="overlay">
       <div className="drawer">
-        {/* <div className="drawer__wrapper"> */}
           <div className="drawer__header">
             <h2 className="drawer__title">Your cart</h2>
             <button onClick={onClose} type="drawer__button button">
-              <span class="sr-only">Close</span>
+              <span className="sr-only">Close</span>
               <span className="button__symbol" aria-hidden="true">×</span>
             </button>
           </div>
-          <div className="drawer__items">
-            {items.map((item, index) => {
+
+          { items.length > 0 ? <>
+            <div className="drawer__items">
+            {/* {items.map((item, index) => {
               return (
                 <CartItem
-                  key={index}
+                  key={item.id}
                   title={item.title}
                   img={item.img}
                   index={index}
                   newPrice={item.newPrice}
                   oldPrice={item.oldPrice}
+                  onRemoveFromCart={onRemoveFromCart}
+                  id={item.id}
                 />
               );
-            })}
+            })} */}
           </div>
           <div className="cart__total total">
-            <div className="total__text">Total price:</div>
-            <div className="total__dash"></div>
-            <div className="total__price">175$</div>
+          <div className="total__text">Total price:</div>
+          <div className="total__dash"></div>
+          <div className="total__price">175$</div>
+        </div>
+        <BtnLink className="drawer__btn" innerText="Pay now" />
+          </>
+            : 
+          <div className="cart-empty">
+            <h2 className="cart-empty__title" >Your cart is empty</h2>
+            <img className="cart-empty__icon" src={sadface} alt="sad emoji face" />
+            <p className="cart-empty__text">Looks like you have not added anything to your cart. Go ahead and explore our top categories</p>
+            <button onClick={onClose} className="btn btn-link cart-empty__btn">Сontinue shopping</button>
           </div>
-          <BtnLink className="drawer__btn" innerText="Pay now" />
-        {/* </div> */}
+          }
+
       </div>
     </div>
   );
