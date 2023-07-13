@@ -1,7 +1,7 @@
 import React from "react";
 import Card from '../cards/Card';
 
-function Arrivals({ onPlus, items = [] }) {
+function Arrivals({ onPlus, onFavorite, items = [] }) {
 
   return (
     <section className="arrivals">
@@ -22,6 +22,7 @@ function Arrivals({ onPlus, items = [] }) {
                 sale={item.sale}
                 newItem={item.newItem}
                 onPlus={onPlus}
+                onFavorite={onFavorite}
               />
             );
           })}

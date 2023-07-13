@@ -172,11 +172,11 @@
         font-weight: bold;
         transition: all 0.3s ease-out;
         position: relative;
-        @media (any-hover: hover) {
-            &:hover {
-                color: black;
-            }
-        }
+        // @media (any-hover: hover) {
+        //     &:hover {
+        //         color: black;
+        //     }
+        // }
         &_cart {
             /* счетчик в корзине */
             &::before   {
@@ -201,6 +201,19 @@
                     opacity: 1;
                     visibility: visible;
                     top: -5px;
+                }
+                .cart-icon {
+                    fill: var(--mainBeige);
+                    stroke: var(--mainBeige);
+                }
+            }
+        }
+
+        &_favorite {
+            &.active {
+                .heart {
+                    fill: var(--mainBeige);
+                    stroke: var(--mainBeige);
                 }
             }
         }
@@ -242,11 +255,17 @@
                 &:hover {
                     fill: var(--mainBeige);
                     stroke: var(--mainBeige);
+                    opacity: 0.5;
                 }
-                &:active {
-                    fill: black;
-                    stroke: black;
-                }
+                // &:focus {
+                //     fill: black;
+                //     stroke: black;
+                //     opacity: 1;
+                // }
+                // &:active {
+                //     fill: black;
+                //     stroke: black;
+                // }
             }
     }
 

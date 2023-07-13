@@ -2,6 +2,7 @@ import BtnLink from "../ui/btn/BtnLink";
 import CartItem from "../cartItem/CartItem";
 import { useEffect } from 'react';
 import sadface from './sadface.svg';
+import Sprite from "../sprite/Sprite";
 
 function Drawer({ onClose, onRemoveFromCart, items = [] }) {
 
@@ -28,7 +29,7 @@ function Drawer({ onClose, onRemoveFromCart, items = [] }) {
 
           { items.length > 0 ? <>
             <div className="drawer__items">
-            {/* {items.map((item, index) => {
+            {items.map((item, index) => {
               return (
                 <CartItem
                   key={item.id}
@@ -41,7 +42,23 @@ function Drawer({ onClose, onRemoveFromCart, items = [] }) {
                   id={item.id}
                 />
               );
-            })} */}
+            })}
+
+          {/* {items.map((obj) => (
+            <div className="cart-item">
+                <div className="cart-item__img-wrapper _pic">
+                  <img className="cart-item__img" src={obj.img} alt={obj.title}/>
+                </div>
+                <p className="cart-item__title">{obj.title}</p>
+                <div className="cart-item__price price">
+                  <div className="price_new">{obj.newPrice}</div>
+                  <div className="price_old">{obj.oldPrice}</div>
+                </div>
+                <button className="cart-item__button" onClick={() => onRemoveFromCart(obj.id)}><Sprite className="cart-item__icon" iconName="close"/></button>
+            </div>
+          ))} */}
+
+
           </div>
           <div className="cart__total total">
           <div className="total__text">Total price:</div>
