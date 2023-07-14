@@ -2,7 +2,7 @@ import Sprite from "../sprite/Sprite";
 
 function CartItem({title, img, newPrice, oldPrice, onRemoveFromCart, id}) {
     return (
-        <div className="item-cart">
+        <div key={id} className="item-cart">
             <div className="item-cart__img-wrapper _pic">
                 <img src={img} className="item-cart__img" alt={title}/>
             </div>

@@ -10,9 +10,9 @@
         &__cards {
           display: grid;
           gap:32px;
-          grid-template-columns: repeat(auto-fit, 285px);
+          grid-template-columns: repeat(auto-fit, 200px);
           @media (max-width: $md4 + px){
-                grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           }
         }
       

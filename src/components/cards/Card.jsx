@@ -2,21 +2,21 @@ import React from 'react';
 
 import Sprite from "../sprite/Sprite";
 
-function Card({title, img, rightsOwner, newPrice, oldPrice, sale, newItem, onPlus, onFavorite}) {
+function Card({id, title, img, rightsOwner, newPrice, oldPrice, sale, newItem, onPlus, onFavorite, favorited = false, addedToCart = false}) {
 
   const labelNew = newItem ? <div className="card__label card__label_new">New</div> : null;
   const labelSale = sale ? <div className="card__label card__label_sale">Sale</div> : null;
 
-  const [isAdded, setIsAdded] = React.useState(false);
-  const [isFavorite, setIsFavorite] = React.useState(false);
+  const [isAdded, setIsAdded] = React.useState(addedToCart);
+  const [isFavorite, setIsFavorite] = React.useState(favorited);
 
   const onClickPlus = () => {
-      onPlus({title, img, newPrice, oldPrice });
+      onPlus({id, title, img, newPrice, oldPrice });
       setIsAdded(!isAdded);
   }
 
   const onClickFavorite = () => {
-      onFavorite({title, img, newPrice, oldPrice });
+      onFavorite({id, title, img, newPrice, oldPrice, rightsOwner });
       setIsFavorite(!isFavorite);
   }
 

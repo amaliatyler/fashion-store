@@ -19,7 +19,9 @@ function FavoritePage({ onAddToFavorite, items = [] }) {
                   rightsOwner={item.rightsOwner}
                   sale={item.sale}
                   newItem={item.newItem}
-                  onAddToFavorite={onAddToFavorite}
+                  onFavorite={onAddToFavorite}
+                  favorited={true}
+                  id={item.id}
                 //   onPlus={onPlus}
                 //   onFavorite={onFavorite}
                 />

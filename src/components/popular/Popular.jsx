@@ -1,7 +1,7 @@
 import React from "react";
 import Card from '../cards/Card';
 
-function Arrivals({ onPlus, onFavorite, items = [] }) {
+function Arrivals({ onPlus, onFavorite, cartItems, items = [] }) {
 
   return (
     <section className="arrivals">
@@ -11,7 +11,7 @@ function Arrivals({ onPlus, onFavorite, items = [] }) {
           {items.map((item, index) => {
             return (
               <Card
-                key={index}
+                key={item.id}
                 title={item.title}
                 subtitle={item.subtitle}
                 img={item.img}
@@ -23,6 +23,8 @@ function Arrivals({ onPlus, onFavorite, items = [] }) {
                 newItem={item.newItem}
                 onPlus={onPlus}
                 onFavorite={onFavorite}
+                id={item.id}
+                addedToCart={cartItems.some(obj => Number(obj.id) === Number(item.id))}
               />
             );
           })}

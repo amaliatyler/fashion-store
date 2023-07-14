@@ -77,6 +77,10 @@
         li {
             &._active a {
                 color: var(--mainBeige);
+                &::before {
+                    visibility: hidden;
+                    opacity: 0;
+                }
             }
         }
     
