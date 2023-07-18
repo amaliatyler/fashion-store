@@ -2,7 +2,7 @@
 
 function BtnLink(props) {
     return (
-        <a className={`btn-link ${props.className}`} href="#!">{props.innerText}</a>
+        <button className={`btn-link ${props.className}`} >{props.innerText}</button>
     )
 }
 

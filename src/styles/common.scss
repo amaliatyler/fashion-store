@@ -130,3 +130,9 @@ body._lock {
   clip-path: inset(50%);
   margin: -1px;
 }
+
+.btn-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

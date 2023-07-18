@@ -1,6 +1,9 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
+import AppContext from "./../../context";
+
 import Sprite from "../sprite/Sprite";
+import { cartItems } from "../../helpers/cartItemsList";
 
 function Card({
   id,
@@ -14,22 +17,17 @@ function Card({
   onPlus,
   onFavorite,
   favorited = false,
-  addedToCart = false,
   isLoading = false,
 }) {
-  const labelNew = newItem ? (
-    <div className="card__label card__label_new">New</div>
-  ) : null;
-  const labelSale = sale ? (
-    <div className="card__label card__label_sale">Sale</div>
-  ) : null;
 
-  const [isAdded, setIsAdded] = React.useState(addedToCart);
+
+  const { isItemAdded } = React.useContext(AppContext);
   const [isFavorite, setIsFavorite] = React.useState(favorited);
+
+  console.log(title, isItemAdded(id));
 
   const onClickPlus = () => {
     onPlus({ id, title, img, newPrice, oldPrice });
-    setIsAdded(!isAdded);
   };
 
   const onClickFavorite = () => {
@@ -37,16 +35,23 @@ function Card({
     setIsFavorite(!isFavorite);
   };
 
-  let cartClass = isAdded
+  let cartClass = isItemAdded(id)
     ? "actions-card__link active actions-card__link_cart"
     : "actions-card__link actions-card__link_cart";
   let heartClass = isFavorite
     ? "actions-card__link active actions-card__link_favorite"
     : "actions-card__link actions-card__link_favorite";
 
+  const labelNew = newItem ? (
+    <div className="card__label card__label_new">New</div>
+  ) : null;
+  const labelSale = sale ? (
+    <div className="card__label card__label_sale">Sale</div>
+  ) : null;
+
   return (
     <article className="card">
-      { isLoading ? (
+      {isLoading ? (
         <ContentLoader
           speed={2}
           width={285}

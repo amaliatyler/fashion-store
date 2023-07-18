@@ -2,15 +2,15 @@ import React from "react";
 import Card from "../cards/Card";
 import AppContext from "../../context";
 
-function Arrivals({ onPlus, onFavorite, cartItems, isLoading, items = [] }) {
+function Arrivals({ onPlus, onFavorite, isLoading, items = [] }) {
 
-  const { isItemAdded } = React.useContext(AppContext);
+  // const { isItemAdded } = React.useContext(AppContext);
 
   const renderItems = () => {
 
     return (isLoading ? [...Array(8)] : items).map((item, index) => (
       <Card
-        key={item && item.id}
+        key={index}
         // title={item.title}
         // subtitle={item.subtitle}
         // img={item.img}
@@ -23,7 +23,6 @@ function Arrivals({ onPlus, onFavorite, cartItems, isLoading, items = [] }) {
         onPlus={onPlus}
         onFavorite={onFavorite}
         id={item && item.id}
-        addedToCart={isItemAdded(item && item.id)}
         isLoading={isLoading}
         {...item}
       />

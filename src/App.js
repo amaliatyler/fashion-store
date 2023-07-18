@@ -66,10 +66,10 @@ function App() {
 
   const onAddToFavorite = async (obj) => {
     try {
-      if (favorites.find((favObj) => favObj.id === obj.id)) {
-        axios.delete(
-          `https://64afe46ac60b8f941af4d1c1.mockapi.io/favorite/${obj.id}`
-        );
+      if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
+        axios.delete(`https://64afe46ac60b8f941af4d1c1.mockapi.io/favorite/${obj.id}`);
+        setFavorites((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id))
+      );
       } else {
         const { data } = await axios.post(
           "https://64afe46ac60b8f941af4d1c1.mockapi.io/favorite",
@@ -94,7 +94,7 @@ function App() {
   }
 
   return (
-    <AppContext.Provider value={ { items, cartItems, favorites, isItemAdded } }>
+    <AppContext.Provider value={ { items, cartItems, favorites, isItemAdded, onAddToFavorite, setIsDrawerOpened, setCartItems } }>
       <div className="App">
         <div className="wrapper">
           {isDrawerOpened && (
@@ -137,9 +137,7 @@ function App() {
               <Route
                 path="/favorite"
                 element={
-                  <FavoritePage
-                    onAddToFavorite={onAddToFavorite}
-                  />
+                  <FavoritePage />
                 }
               />
               <Route path="/cart" element={<CartPage />} />
