@@ -136,3 +136,17 @@ body._lock {
   align-items: center;
   justify-content: center;
 }
+
+@keyframes button-loading {
+  0% {
+          opacity: 1;
+  }
+
+  50% {
+          opacity: 0.5;
+  }
+
+  100% {
+          opacity: 1;
+  }
+}

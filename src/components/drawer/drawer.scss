@@ -89,6 +89,7 @@
     &:disabled {
         opacity: 0.5;
         pointer-events:none;
+        animation: button-loading 0.9s ease-in-out infinite;
     }
   }
 }
