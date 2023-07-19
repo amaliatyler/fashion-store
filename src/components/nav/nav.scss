@@ -97,6 +97,16 @@
             position: relative;
             /* TODO забрать отсюда медиа-запрос*/
             @include hover-underline(#DEB887);
+            &-cart {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                &:hover {
+                    svg {
+                        fill: var(--mainBeige);
+                    }
+                }
+            }
         }
 
         &__cart {
@@ -105,9 +115,6 @@
             fill: black;
             transition: all 0.3s ease 0.1s;
             cursor: pointer;
-            &:hover {
-               fill: var(--mainBeige);
-            }
         }
     
     }

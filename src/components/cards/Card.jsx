@@ -24,8 +24,6 @@ function Card({
   const { isItemAdded } = React.useContext(AppContext);
   const [isFavorite, setIsFavorite] = React.useState(favorited);
 
-  console.log(title, isItemAdded(id));
-
   const onClickPlus = () => {
     onPlus({ id, title, img, newPrice, oldPrice });
   };
@@ -81,8 +79,8 @@ function Card({
               <h5 className="card__title">{title}</h5>
             </div>
             <div className="card__prices">
-              <div className="card__price">{newPrice}</div>
-              <div className="card__price_old">{oldPrice}</div>
+              <div className="card__price">{newPrice}$</div>
+              <div className="card__price_old">{oldPrice}$</div>
             </div>
             <div className="card__actions actions-card">
               <div className="actions-card__body">

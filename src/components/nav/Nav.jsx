@@ -1,9 +1,14 @@
+import React from 'react'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
-import BtnLink from '../ui/btn/BtnLink';
+import AppContext from '../../context';
 import Sprite from '../sprite/Sprite';
 
 function Nav({className, handleCartClick}) {
+
+    const { cartItems } = React.useContext(AppContext);
+
+    const totalPrice = cartItems.reduce((sum, obj) => Number(obj.newPrice) + Number(sum) , 0);
 
     return(
         <nav className={`nav ${className}`}>
@@ -11,10 +16,12 @@ function Nav({className, handleCartClick}) {
                 <CustomLink to="/" className="list__link">HOME</CustomLink>
                 <CustomLink to="/sales" className="list__link">SALE</CustomLink>
                 <CustomLink to="/favorite" className="list__link">FAVOURITE</CustomLink>
-                {/* <CustomLink to="/cart/" className="list__link icon__link" onClick={handleCartClick}>
+                {/* <CustomLink to="/cart/" className="list__link list__link-cart" onClick={handleCartClick}>
+                    <span>{totalPrice}$</span>
                     <Sprite className="list__cart" id="paper-bag" iconName="paperBag"/>
                 </CustomLink> */}
-                <li className="list__link icon__link" onClick={handleCartClick}>
+                <li className="list__link list__link-cart" onClick={handleCartClick}>
+                    <span>{totalPrice}$</span>
                     <Sprite className="list__cart" id="paper-bag" iconName="paperBag"/>
                 </li>
             </ul>

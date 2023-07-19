@@ -2,6 +2,7 @@ import Nav from '../nav/Nav';
 import Sprite from '../sprite/Sprite';
 
 function Header ({handleCartClick}) {
+
     return (
         <header className="header">
             <div className="container">

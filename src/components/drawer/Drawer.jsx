@@ -53,6 +53,10 @@ function Drawer({ onClose, onRemoveFromCart, items = [] }) {
     };
   }, []);
 
+  const totalPrice = cartItems.reduce((sum, obj) => Number(obj.newPrice) + Number(sum) , 0);
+  const totalDiscount = cartItems.reduce((sum, obj) => Number(obj.oldPrice) + Number(sum) , 0);
+  const discount = totalDiscount - totalPrice;
+
   return (
     <div className="overlay">
       <div className="drawer">
@@ -87,7 +91,12 @@ function Drawer({ onClose, onRemoveFromCart, items = [] }) {
             <div className="cart__total total">
               <div className="total__text">Total price:</div>
               <div className="total__dash"></div>
-              <div className="total__price">175$</div>
+              <div className="total__price">{totalPrice} $</div>
+            </div>
+            <div className="cart__discount discount">
+              <div className="discount__text">Total discount:</div>
+              <div className="discount__dash"></div>
+              <div className="discount__price">{discount} $</div>
             </div>
             <button disabled={isLoading} onClick={onClickOrder} className="drawer__btn">
               Order
