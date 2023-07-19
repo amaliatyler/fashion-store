@@ -1,20 +1,22 @@
 import React from "react";
 import axios from "axios";
 
-import BtnLink from "../ui/btn/BtnLink";
 import CartItem from "../cartItem/CartItem";
 import { useEffect } from "react";
 import sadface from "./sadface.svg";
 import completedOrder from "./completedOrder.svg";
-import Sprite from "../sprite/Sprite";
 import Info from "../Info";
 import AppContext from "../../context";
+
+
+/* костыль: задержка, чтобы mockapi не заблокировал */
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function Drawer({ onClose, onRemoveFromCart, items = [] }) {
   const { cartItems, setCartItems } = React.useContext(AppContext);
   const [orderId, setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const onClickOrder = async () => {
     try {
@@ -23,13 +25,20 @@ function Drawer({ onClose, onRemoveFromCart, items = [] }) {
         "https://64afe46ac60b8f941af4d1c1.mockapi.io/orders", {
           items: cartItems,
         });
-      await axios.put("https://64afe46ac60b8f941af4d1c1.mockapi.io/cart", []);
+
       setOrderId(data.id);
       setIsOrderComplete(true);
       /* очищаем корзину */
       setCartItems([]);
+
+      for(let i = 0; i < cartItems.length; i++) {
+        const item = cartItems[i];
+        await axios.delete('https://64a582c300c3559aa9bfd40f.mockapi.io/cart/' + item.id);
+        await delay(1000);
+      }
+
     } catch (error) {
-      alert('Не удалось создать заказ :(')
+      alert('Ошибка при создании заказа :(')
     }
     setIsLoading(false);
   };
