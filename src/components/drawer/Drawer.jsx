@@ -1,19 +1,19 @@
 import React from "react";
+import { useEffect } from "react";
 import axios from "axios";
 
 import CartItem from "../cartItem/CartItem";
-import { useEffect } from "react";
 import sadface from "./sadface.svg";
 import completedOrder from "./completedOrder.svg";
 import Info from "../Info";
-import AppContext from "../../context";
+import { useCart } from "../../hooks/useCart";
 
 
 /* костыль: задержка, чтобы mockapi не заблокировал */
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-function Drawer({ onClose, onRemoveFromCart, items = [] }) {
-  const { cartItems, setCartItems } = React.useContext(AppContext);
+function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
+  const { cartItems, setCartItems, totalPrice, totalDiscount } = useCart();
   const [orderId, setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -53,12 +53,8 @@ function Drawer({ onClose, onRemoveFromCart, items = [] }) {
     };
   }, []);
 
-  const totalPrice = cartItems.reduce((sum, obj) => Number(obj.newPrice) + Number(sum) , 0);
-  const totalDiscount = cartItems.reduce((sum, obj) => Number(obj.oldPrice) + Number(sum) , 0);
-  const discount = totalDiscount - totalPrice;
-
   return (
-    <div className="overlay">
+    <div className={`overlay ${opened ? 'visible' : 'hidden'}`}>
       <div className="drawer">
         <div className="drawer__header">
           <h2 className="drawer__title">Your cart</h2>
@@ -96,7 +92,7 @@ function Drawer({ onClose, onRemoveFromCart, items = [] }) {
             <div className="cart__discount discount">
               <div className="discount__text">Total discount:</div>
               <div className="discount__dash"></div>
-              <div className="discount__price">{discount} $</div>
+              <div className="discount__price">{totalDiscount} $</div>
             </div>
             <button disabled={isLoading} onClick={onClickOrder} className="drawer__btn">
               Order

@@ -9,10 +9,10 @@ function CartItem({title, img, newPrice, oldPrice, onRemoveFromCart, id}) {
             {/* <div className="item-cart__rights">Image by {props.rightsOwner}</div> */}
             <div className="item-cart__title">{title}</div>
             <div className="item-cart__price price">
-                <div className="price_new">{newPrice}</div>
-                <div className="price_old">{oldPrice}</div>
+                <div className="price_new">{newPrice}$</div>
+                <div className="price_old">{oldPrice}$</div>
             </div>
-            <button onClick={() => onRemoveFromCart(id)}><Sprite className="item-cart__icon" iconName="close"/></button>
+            {onRemoveFromCart && <button onClick={() => onRemoveFromCart(id)}><Sprite className="item-cart__icon" iconName="close"/></button>}
         </div>
   );
 }

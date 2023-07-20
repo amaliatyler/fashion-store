@@ -1,0 +1,15 @@
+.order {
+        @include adaptive-value('padding', 40, 20, 1);
+        display: flex;
+        flex-wrap: wrap;
+        &__num {
+                flex-basis: 100%;
+                font-weight: 600;
+                @include adaptive-value('margin-bottom', 20, 10, 1);
+
+        }
+        &__items {
+                display: flex;
+                gap:30px;
+        }
+}

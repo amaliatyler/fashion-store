@@ -55,6 +55,10 @@ body._lock {
   }
 }
 
+.section-pad {
+  @include adaptive-value('padding', 80, 40, 1);
+}
+
 ._pic {
   background-position: center;
   background-size: cover;
@@ -73,6 +77,7 @@ body._lock {
 .section-title {
   font-weight: 900;
   @include adaptive-value('font-size', 48, 30, 0);
+  @include adaptive-value('margin-bottom', 60, 30, 1);
   line-height: 1.04;
   letter-spacing: 0.06em;
   text-decoration: underline;

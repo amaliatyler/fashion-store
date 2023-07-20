@@ -10,11 +10,12 @@ import SalesPage from "./pages/sales/Sales";
 import CartPage from "./pages/cartPage/CartPage";
 import FavoritePage from "./pages/favorite/FavoritePage";
 import Drawer from "./components/drawer/Drawer";
-import AppContext from './context';
+import AppContext from "./context";
+import { Orders } from "./pages/orders/Orders";
 
 function App() {
   const [items, setItems] = React.useState([]);
-  const [isDrawerOpened, setIsDrawerOpened] = React.useState(false);
+  const [isDrawerOpened, setIsDrawerOpened] = React.useState(true);
   const [cartItems, setCartItems] = React.useState([]);
   const [favorites, setFavorites] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
@@ -67,9 +68,12 @@ function App() {
   const onAddToFavorite = async (obj) => {
     try {
       if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
-        axios.delete(`https://64afe46ac60b8f941af4d1c1.mockapi.io/favorite/${obj.id}`);
-        setFavorites((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id))
-      );
+        axios.delete(
+          `https://64afe46ac60b8f941af4d1c1.mockapi.io/favorite/${obj.id}`
+        );
+        setFavorites((prev) =>
+          prev.filter((item) => Number(item.id) !== Number(obj.id))
+        );
       } else {
         const { data } = await axios.post(
           "https://64afe46ac60b8f941af4d1c1.mockapi.io/favorite",
@@ -91,20 +95,31 @@ function App() {
 
   const isItemAdded = (id) => {
     return cartItems.some((obj) => Number(obj.id) === Number(id));
-  }
+  };
 
   return (
-    <AppContext.Provider value={ { items, cartItems, favorites, isItemAdded, onAddToFavorite, setIsDrawerOpened, setCartItems } }>
+    <AppContext.Provider
+      value={{
+        items,
+        cartItems,
+        favorites,
+        isItemAdded,
+        onAddToFavorite,
+        setIsDrawerOpened,
+        setCartItems,
+      }}
+    >
       <div className="App">
         <div className="wrapper">
-          {isDrawerOpened && (
-            <Drawer
-              onClose={() => setIsDrawerOpened(false)}
-              items={cartItems}
-              setCartItems={setCartItems}
-              onRemoveFromCart={onRemoveFromCart}
-            />
-          )}
+
+          <Drawer
+            onClose={() => setIsDrawerOpened(false)}
+            items={cartItems}
+            setCartItems={setCartItems}
+            onRemoveFromCart={onRemoveFromCart}
+            opened={isDrawerOpened}
+          />
+
           <Header
             handleCartClick={() => {
               setIsDrawerOpened(true);
@@ -134,13 +149,10 @@ function App() {
                   />
                 }
               />
-              <Route
-                path="/favorite"
-                element={
-                  <FavoritePage />
-                }
-              />
+              <Route path="/favorite" element={<FavoritePage />} />
               <Route path="/cart" element={<CartPage />} />
+
+              <Route path="/orders" element={<Orders />} />
             </Routes>
           </div>
           <Footer />
