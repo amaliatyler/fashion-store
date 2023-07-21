@@ -7,6 +7,7 @@ import { cartItems } from "../../helpers/cartItemsList";
 
 function Card({
   id,
+  parentId,
   title,
   img,
   rightsOwner,
@@ -24,12 +25,14 @@ function Card({
   const { isItemAdded } = React.useContext(AppContext);
   const [isFavorite, setIsFavorite] = React.useState(favorited);
 
+  const objProps = { id, parentId: id, title, img, newPrice, oldPrice };
+
   const onClickPlus = () => {
-    onPlus({ id, title, img, newPrice, oldPrice });
+    onPlus(objProps);
   };
 
   const onClickFavorite = () => {
-    onFavorite({ id, title, img, newPrice, oldPrice, rightsOwner });
+    onFavorite(objProps, { rightsOwner });
     setIsFavorite(!isFavorite);
   };
 

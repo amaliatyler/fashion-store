@@ -43,19 +43,20 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
     setIsLoading(false);
   };
 
-  useEffect(() => {
-    // Добавляем класс к тегу body при рендере компонента
-    document.body.classList.add("_lock");
+  let scrollbarWidth = 0;
+  const blockScroll = function() {
+    opened ? document.body.classList.add("_lock") : document.body.classList.remove("_lock");
+    return scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-    // Удаляем класс из тега body при размонтировании компонента
-    return () => {
-      document.body.classList.remove("_lock");
-    };
-  }, []);
+  };
+  // const prevWidth = document.querySelector('.overlay').style.width;
+  // document.querySelector('.overlay').style.width = prevWidth + scrollbarWidth;
+
+  blockScroll();
 
   return (
-    <div className={`overlay ${opened ? 'visible' : 'hidden'}`}>
-      <div className="drawer">
+    <div className={`overlay ${opened ? 'visible' : 'hidden'}`} >
+      <div className={`drawer ${opened ? 'visible' : 'hidden'}`}>
         <div className="drawer__header">
           <h2 className="drawer__title">Your cart</h2>
           <button onClick={onClose} type="drawer__button button">

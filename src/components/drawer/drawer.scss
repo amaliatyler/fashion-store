@@ -6,27 +6,29 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  overflow: hidden;
   &.hidden {
     visibility: hidden;
+    opacity: 0;
   }
   &.visible {
     visibility: visible;
+    opacity: 1;
   }
 }
 
 .drawer {
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   position: absolute;
   flex-wrap: wrap;
   width: 420px;
   height: 100vh;
-  right: 0;
   background-color: #ffffff;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
   @include adaptive-value("padding", 30, 15, 1);
-
+  transition: all 0.5s ease-in-out;
   &__header {
     display: flex;
     justify-content: space-between;
@@ -55,6 +57,14 @@
     @include adaptive-value("margin-bottom", 40, 20, 1);
     flex: 1;
     overflow: auto;
+  }
+
+  &.hidden {
+    right: -100%;
+  }
+
+  &.visible {
+    right: 0;
   }
 }
 
