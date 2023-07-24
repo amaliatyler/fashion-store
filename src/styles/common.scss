@@ -155,3 +155,9 @@ body._lock {
           opacity: 1;
   }
 }
+
+.empty-section {
+  text-align: center;
+  @include adaptive-value("font-size", 24, 18, 1);
+  font-weight: bold;
+}

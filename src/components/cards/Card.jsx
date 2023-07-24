@@ -3,7 +3,6 @@ import ContentLoader from "react-content-loader";
 import AppContext from "./../../context";
 
 import Sprite from "../sprite/Sprite";
-import { cartItems } from "../../helpers/cartItemsList";
 
 function Card({
   id,
