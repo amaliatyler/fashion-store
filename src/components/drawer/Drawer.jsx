@@ -7,13 +7,13 @@ import sadface from "./sadface.svg";
 import completedOrder from "./completedOrder.svg";
 import Info from "../Info";
 import { useCart } from "../../hooks/useCart";
-
+import Card from "../cards/Card";
 
 /* костыль: задержка, чтобы mockapi не заблокировал */
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
-  const { cartItems, setCartItems, totalPrice, totalDiscount } = useCart();
+  const { cartItems, setCartItems, totalPrice, totalSalesPrice } = useCart();
   const [orderId, setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -22,41 +22,41 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
     try {
       setIsLoading(true);
       const { data } = await axios.post(
-        "https://64afe46ac60b8f941af4d1c1.mockapi.io/orders", {
+        "https://64afe46ac60b8f941af4d1c1.mockapi.io/orders",
+        {
           items: cartItems,
-        });
+        }
+      );
 
       setOrderId(data.id);
       setIsOrderComplete(true);
       /* очищаем корзину */
       setCartItems([]);
 
-      for(let i = 0; i < cartItems.length; i++) {
+      for (let i = 0; i < cartItems.length; i++) {
         const item = cartItems[i];
-        await axios.delete('https://64a582c300c3559aa9bfd40f.mockapi.io/cart/' + item.id);
+        await axios.delete(
+          "https://64a582c300c3559aa9bfd40f.mockapi.io/cart/" + item.id
+        );
         await delay(1000);
       }
-
     } catch (error) {
-      alert('Ошибка при создании заказа :(')
+      alert("Ошибка при создании заказа :(");
     }
     setIsLoading(false);
   };
 
-  let scrollbarWidth = 0;
-  const blockScroll = function() {
-    opened ? document.body.classList.add("_lock") : document.body.classList.remove("_lock");
-    return scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-
+  const blockScroll = function () {
+    opened
+      ? document.body.classList.add("_lock")
+      : document.body.classList.remove("_lock");
   };
-  // const prevWidth = document.querySelector('.overlay').style.width;
-  // document.querySelector('.overlay').style.width = prevWidth + scrollbarWidth;
 
   blockScroll();
 
   return (
-    <div className={`overlay ${opened ? 'visible' : 'hidden'}`} >
-      <div className={`drawer ${opened ? 'visible' : 'hidden'}`}>
+    <div className={`overlay ${opened ? "visible" : "hidden"}`}>
+      <div className={`drawer ${opened ? "visible" : "hidden"}`}>
         <div className="drawer__header">
           <h2 className="drawer__title">Your cart</h2>
           <button onClick={onClose} type="drawer__button button">
@@ -77,11 +77,20 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
                     title={item.title}
                     img={item.img}
                     index={index}
-                    newPrice={item.newPrice}
-                    oldPrice={item.oldPrice}
+                    price={item.price}
                     onRemoveFromCart={onRemoveFromCart}
                     id={item.id}
                   />
+                  // <Card
+                  //   key={item.id}
+                  //   title={item.title}
+                  //   img={item.img}
+                  //   index={index}
+                  //   price={item.price}
+                  //   oldPrice={item.oldPrice}
+                  //   onRemoveFromCart={onRemoveFromCart}
+                  //   id={item.id}
+                  // />
                 );
               })}
             </div>
@@ -93,9 +102,13 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
             <div className="cart__discount discount">
               <div className="discount__text">Total discount:</div>
               <div className="discount__dash"></div>
-              <div className="discount__price">{totalDiscount} $</div>
+              <div className="discount__price">{totalSalesPrice} $</div>
             </div>
-            <button disabled={isLoading} onClick={onClickOrder} className="drawer__btn">
+            <button
+              disabled={isLoading}
+              onClick={onClickOrder}
+              className="drawer__btn"
+            >
               Order
             </button>
           </>

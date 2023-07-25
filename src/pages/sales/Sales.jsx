@@ -19,7 +19,7 @@ function SalesPage( { handleInput, searchValue, setSearchValue }) {
           </div>
           <div className="discounts__products product">
             {/* Сократить код и вынести логику в отдельную функцию */}
-            {saleProducts.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase())).map((product, index) => {
+            {/* {saleProducts.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase())).map((product, index) => {
               return (
                 <SalesProduct
                   key={index}
@@ -31,7 +31,7 @@ function SalesPage( { handleInput, searchValue, setSearchValue }) {
                   index={index}
                 />
               );
-            })}
+            })} */}
           </div>
         </div>
       </section>

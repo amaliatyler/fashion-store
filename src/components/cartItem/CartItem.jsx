@@ -1,6 +1,6 @@
 import Sprite from "../sprite/Sprite";
 
-function CartItem({title, img, newPrice, oldPrice, onRemoveFromCart, id}) {
+function CartItem({title, img, price, oldPrice, onRemoveFromCart, id}) {
     return (
         <div key={id} className="item-cart">
             <div className="item-cart__img-wrapper _pic">
@@ -9,7 +9,7 @@ function CartItem({title, img, newPrice, oldPrice, onRemoveFromCart, id}) {
             {/* <div className="item-cart__rights">Image by {props.rightsOwner}</div> */}
             <div className="item-cart__title">{title}</div>
             <div className="item-cart__price price">
-                <div className="price_new">{newPrice}$</div>
+                <div className="price_new">{price}$</div>
                 <div className="price_old">{oldPrice}$</div>
             </div>
             {onRemoveFromCart && <button onClick={() => onRemoveFromCart(id)}><Sprite className="item-cart__icon" iconName="close"/></button>}

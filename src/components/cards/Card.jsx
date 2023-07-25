@@ -10,8 +10,7 @@ function Card({
   title,
   img,
   rightsOwner,
-  newPrice,
-  oldPrice,
+  price,
   sale,
   newItem,
   onPlus,
@@ -21,10 +20,10 @@ function Card({
 }) {
 
 
-  const { isItemAdded } = React.useContext(AppContext);
+  const { isItemAdded, countSalePrice } = React.useContext(AppContext);
   const [isFavorite, setIsFavorite] = React.useState(favorited);
 
-  const objProps = { id, parentId: id, title, img, newPrice, oldPrice };
+  const objProps = { id, parentId: id, title, img, price };
 
   const onClickPlus = () => {
     onPlus(objProps);
@@ -48,6 +47,8 @@ function Card({
   const labelSale = sale ? (
     <div className="card__label card__label_sale">Sale</div>
   ) : null;
+
+  const salePrice = countSalePrice(price, sale);
 
   return (
     <article className="card">
@@ -81,8 +82,8 @@ function Card({
               <h5 className="card__title">{title}</h5>
             </div>
             <div className="card__prices">
-              <div className="card__price">{newPrice}$</div>
-              <div className="card__price_old">{oldPrice}$</div>
+              <div className="card__price">{sale ? salePrice : price}$</div>
+              {sale && <div className="card__price_old">{price}$</div>}
             </div>
             <div className="card__actions actions-card">
               <div className="actions-card__body">

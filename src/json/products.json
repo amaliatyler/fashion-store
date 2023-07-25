@@ -1,0 +1,166 @@
+[
+  {
+    "id": 1,
+    "title": "Hoodie",
+    "img": "/images/items/item-01.jpg",
+    "productsLink": "#",
+    "rightsOwner": "Freepik",
+    "price": "40",
+    "sale": false,
+    "newItem": true
+  },
+  {
+    "id": 2,
+    "title": "Blaser",
+    "img": "/images/items/item-02.jpg",
+    "productsLink": "#",
+    "rightsOwner": "bristekjegor",
+    "price": "70",
+    "sale": "20",
+    "newItem": false
+  },
+  {
+    "id": 3,
+    "title": "Jacket",
+    "img": "/images/items/item-03.jpg",
+    "productsLink": "#",
+    "rightsOwner": "bristekjegor",
+    "price": "140",
+    "sale": "10",
+    "newItem": true
+  },
+  {
+    "id": 4,
+    "title": "Jacket",
+    "img": "/images/items/item-04.jpg",
+    "productsLink": "#",
+    "rightsOwner": "bristekjegor",
+    "price": "68",
+    "sale": false,
+    "newItem": false
+  },
+  {
+    "id": 5,
+    "title": "Jacket",
+    "img": "/images/items/item-05.jpg",
+    "productsLink": "#",
+    "rightsOwner": "Freepik",
+    "price": "110",
+    "sale": false,
+    "newItem": false
+  },
+  {
+    "id": 6,
+    "title": "Hat",
+    "img": "/images/items/item-06.jpg",
+    "productsLink": "#",
+    "rightsOwner": "master1305",
+    "price": "40",
+    "sale": "20",
+    "newItem": true
+  },
+  {
+    "id": 7,
+    "title": "Turtleneck",
+    "img": "/images/items/item-07.jpg",
+    "productsLink": "#",
+    "rightsOwner": "Freepik",
+    "price": "60",
+    "sale": false,
+    "newItem": true
+  },
+  {
+    "id": 8,
+    "title": "Jacket",
+    "img": "/images/items/item-08.jpg",
+    "productsLink": "#",
+    "rightsOwner": "senivpetro",
+    "price": "150",
+    "sale": "20",
+    "newItem": false
+  },
+
+  {
+    "id": 9,
+    "title": "T-shirt",
+    "subtitle": "Explore now!",
+    "img": "/images/items/item-09.jpg",
+    "productsLink": "#",
+    "rightsOwner": "Freepik",
+    "price": "40",
+    "sale": false,
+    "newItem": true
+  },
+  {
+    "id": 10,
+    "title": "Hoodie",
+    "img": "/images/items/item-10.jpg",
+    "productsLink": "#",
+    "rightsOwner": "bristekjegor",
+    "price": "70",
+    "sale": "15",
+    "newItem": false
+  },
+  {
+    "id": 11,
+    "title": "Panama",
+    "img": "/images/items/item-11.jpg",
+    "productsLink": "#",
+    "rightsOwner": "rawpixel.com",
+    "price": "25",
+    "sale": false,
+    "newItem": true
+  },
+  {
+    "id": 12,
+    "title": "Overalls",
+    "img": "/images/items/item-12.jpg",
+    "productsLink": "#",
+    "rightsOwner": "diana.grytsku",
+    "price": "100",
+    "sale": "30",
+    "newItem": false
+  },
+  {
+    "id": 13,
+    "title": "Sweatshirt",
+    "img": "/images/items/item-13.jpg",
+    "productsLink": "#",
+    "rightsOwner": "freepik",
+    "price": "60",
+    "sale": false,
+    "newItem": true
+  },
+  {
+    "id": 14,
+    "title": "Trousers",
+    "img": "/images/items/item-14.jpg",
+    "productsLink": "#",
+    "rightsOwner": "Freepik",
+    "price": "70",
+    "sale": false,
+    "newItem": false
+  },
+
+  {
+    "id": 15,
+    "title": "Dress",
+    "img": "/images/items/item-15.jpg",
+    "productsLink": "#",
+    "rightsOwner": "bristekjegor",
+    "price": "70",
+    "sale": "10",
+    "newItem": false
+  },
+
+  {
+    "id": 16,
+    "title": "Sport Bra",
+    "img": "/images/items/item-16.jpg",
+    "productsLink": "#",
+    "rightsOwner": "freepik",
+    "price": "70",
+    "sale": "20",
+    "newItem": true
+  }
+]

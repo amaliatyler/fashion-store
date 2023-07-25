@@ -46,8 +46,8 @@ function App() {
   }, []);
 
   const onAddToCart = async (obj) => {
-    const findItem = cartItems.find((item) => Number(item.parentId) === Number(obj.id));
     try {
+      const findItem = cartItems.find((item) => Number(item.parentId) === Number(obj.id));
       if (findItem) {
         setCartItems((prev) =>
           prev.filter((item) => Number(item.parentId) !== Number(obj.id))
@@ -110,6 +110,11 @@ function App() {
     return cartItems.some((obj) => Number(obj.parentId) === Number(id));
   };
 
+  const countSalePrice = function(price, sale) {
+    let carry = sale ? sale : 0;
+    return Math.round(Number(price) - ((Number(price) * Number(carry)) / 100));
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -120,6 +125,7 @@ function App() {
         onAddToFavorite,
         setIsDrawerOpened,
         setCartItems,
+        countSalePrice
       }}
     >
       <div className="App">

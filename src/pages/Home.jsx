@@ -12,10 +12,10 @@ function Home({ onPlus, items, onFavorite, cartItems, isLoading }) {
     <>
       <Promo />
       <Popular onPlus={onPlus} items={items} onFavorite={onFavorite} cartItems={cartItems} isLoading={isLoading}/>
-      <Brands />
+      {/* <Brands />
       <Favorite />
       <Sale />
-      <Application />
+      <Application /> */}
       <SignUp />
     </>
   );

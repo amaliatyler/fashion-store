@@ -3,6 +3,7 @@ import Card from "../cards/Card";
 import AppContext from "../../context";
 
 function Arrivals({ onPlus, onFavorite, isLoading, items = [] }) {
+  // const itemsToShow = items.slice(0, 8);
 
   const renderItems = () => {
 
@@ -19,7 +20,7 @@ function Arrivals({ onPlus, onFavorite, isLoading, items = [] }) {
   };
 
   return (
-    <section className="arrivals">
+    <section className="arrivals section-block">
       <div className="arrivals__container container">
         <h2 className="arrivals__title section-title">trending now</h2>
         <div className="arrivals__cards">{renderItems()}</div>
