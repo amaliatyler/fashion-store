@@ -57,6 +57,10 @@
     @include adaptive-value("margin-bottom", 40, 20, 1);
     flex: 1;
     overflow: auto;
+    /* */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   &.hidden {
@@ -66,6 +70,45 @@
   &.visible {
     right: 0;
   }
+
+  .card {
+
+    /* */
+
+    display: grid;
+    grid-template-columns: 100px 1fr 50px;
+    grid-template-rows: repeat(2, auto);
+
+    &__label {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &__body { 
+      grid-row: 1 / 3;
+      grid-column: 2 / 3;
+    }
+
+    &__image {
+      // padding: 0px 150px 150px 0px;
+      grid-row: 1 / 3;
+      grid-column: 1 / 2;
+    }
+
+    &__remove {
+      position: unset;
+      grid-row: 1 / 2;
+      grid-column: 3 / 4;
+    }
+
+    &:hover {
+            .card__actions {
+                    visibility: hidden;
+                    opacity: 0;
+                    pointer-events: none;
+            }
+    }
+}
 }
 
 .button {
@@ -89,13 +132,11 @@
     background-color: var(--mainColor);
     color: var(--mainWhite);
     font-weight: bold;
-    // padding: 13px 22px 17px 22px;
     @include adaptive-value("padding-top", 13, 8, 0);
     @include adaptive-value("padding-right", 22, 17, 0);
     @include adaptive-value("padding-bottom", 17, 12, 0);
     @include adaptive-value("padding-left", 22, 17, 0);
     @include adaptive-value("font-size", 18, 16, 0);
-    // font-size: 24px;
     letter-spacing: -3%;
     transition: all 0.3s ease-out;
     &:hover {

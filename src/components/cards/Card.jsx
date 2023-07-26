@@ -6,7 +6,6 @@ import Sprite from "../sprite/Sprite";
 
 function Card({
   id,
-  parentId,
   title,
   img,
   rightsOwner,
@@ -15,6 +14,7 @@ function Card({
   newItem,
   onPlus,
   onFavorite,
+  onRemoveFromCart,
   favorited = false,
   isLoading = false,
 }) {
@@ -23,7 +23,7 @@ function Card({
   const { isItemAdded, countSalePrice } = React.useContext(AppContext);
   const [isFavorite, setIsFavorite] = React.useState(favorited);
 
-  const objProps = { id, parentId: id, title, img, price };
+  const objProps = { id, parentId: id, title, img, price, sale };
 
   const onClickPlus = () => {
     onPlus(objProps);
@@ -104,6 +104,7 @@ function Card({
                 </a>
               </div>
             </div>
+            {onRemoveFromCart && <button className="card__remove" onClick={() => onRemoveFromCart(id)}><Sprite className="item-cart__icon" iconName="close"/></button>}
           </div>
         </>
       )}

@@ -1,10 +1,8 @@
 import React from "react";
 import Card from "../cards/Card";
-import AppContext from "../../context";
 
 function Arrivals({ onPlus, onFavorite, isLoading, items = [] }) {
-  // const itemsToShow = items.slice(0, 8);
-
+  
   const renderItems = () => {
 
     return (isLoading ? [...Array(8)] : items).map((item, index) => (

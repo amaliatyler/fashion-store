@@ -45,6 +45,7 @@ function App() {
     fetchData();
   }, []);
 
+
   const onAddToCart = async (obj) => {
     try {
       const findItem = cartItems.find((item) => Number(item.parentId) === Number(obj.id));

@@ -54,6 +54,8 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
 
   blockScroll();
 
+  
+
   return (
     <div className={`overlay ${opened ? "visible" : "hidden"}`}>
       <div className={`drawer ${opened ? "visible" : "hidden"}`}>
@@ -70,27 +72,27 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
         {items.length > 0 ? (
           <>
             <div className="drawer__items">
-              {items.map((item, index) => {
+              {items.map((item) => {
                 return (
-                  <CartItem
-                    key={item.id}
-                    title={item.title}
-                    img={item.img}
-                    index={index}
-                    price={item.price}
-                    onRemoveFromCart={onRemoveFromCart}
-                    id={item.id}
-                  />
-                  // <Card
+                  // <CartItem
                   //   key={item.id}
                   //   title={item.title}
                   //   img={item.img}
                   //   index={index}
                   //   price={item.price}
-                  //   oldPrice={item.oldPrice}
                   //   onRemoveFromCart={onRemoveFromCart}
                   //   id={item.id}
                   // />
+                  <Card
+                    key={item.id}
+                    onRemoveFromCart={onRemoveFromCart}
+                    id={item.id}
+                    title={item.title}
+                    img={item.img}
+                    price={item.price}
+                    sale={item.sale}
+                    onDeleteItem={onRemoveFromCart}
+                  />
                 );
               })}
             </div>
