@@ -6,7 +6,7 @@ import { useCart } from '../../hooks/useCart';
 
 function Nav({className, handleCartClick}) {
 
-    const { totalPrice } = useCart();
+    const { totalPriceAfterDiscount } = useCart();
 
     return(
         <nav className={`nav ${className}`}>
@@ -19,7 +19,7 @@ function Nav({className, handleCartClick}) {
                     <Sprite className="list__cart" id="paper-bag" iconName="paperBag"/>
                 </CustomLink> */}
                 <li className="list__link list__link-cart" onClick={handleCartClick}>
-                    <span>{totalPrice}$</span>
+                    <span>{totalPriceAfterDiscount}$</span>
                     <Sprite className="list__cart" id="paper-bag" iconName="paperBag"/>
                 </li>
                 <CustomLink to="/orders" className="list__link">ORDERS</CustomLink>

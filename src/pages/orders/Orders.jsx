@@ -41,8 +41,9 @@ export function Orders() {
                       key={item.id}
                       img={item.img}
                       title={item.title}
-                      newPrice={item.newPrice}
+                      price={item.price}
                       rightsOwner={item.rightsOwner}
+                      sale={item.sale}
                     />
                   ))}
                 </ul>

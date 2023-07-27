@@ -13,7 +13,7 @@ import Card from "../cards/Card";
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
-  const { cartItems, setCartItems, totalPrice, totalSalesPrice } = useCart();
+  const { cartItems, setCartItems, totalPriceAfterDiscount, totalDiscount} = useCart();
   const [orderId, setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -27,7 +27,7 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
           items: cartItems,
         }
       );
-
+      console.log(items)
       setOrderId(data.id);
       setIsOrderComplete(true);
       /* очищаем корзину */
@@ -88,6 +88,7 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
                     onRemoveFromCart={onRemoveFromCart}
                     id={item.id}
                     title={item.title}
+                    rightsOwner={item.rightsOwner}
                     img={item.img}
                     price={item.price}
                     sale={item.sale}
@@ -99,12 +100,12 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
             <div className="cart__total total">
               <div className="total__text">Total price:</div>
               <div className="total__dash"></div>
-              <div className="total__price">{totalPrice} $</div>
+              <div className="total__price">{totalDiscount} $</div>
             </div>
             <div className="cart__discount discount">
               <div className="discount__text">Total discount:</div>
               <div className="discount__dash"></div>
-              <div className="discount__price">{totalSalesPrice} $</div>
+              <div className="discount__price">{totalPriceAfterDiscount} $</div>
             </div>
             <button
               disabled={isLoading}

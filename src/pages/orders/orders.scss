@@ -1,4 +1,15 @@
+.orders {
+        &__cards {
+                /* от более новых заказов к более старым */
+                display: flex;
+                flex-wrap: wrap-reverse;
+        }
+}
+
 .order {
+
+        flex-basis: 100%;
+
         @include adaptive-value('padding', 40, 20, 1);
         display: flex;
         flex-wrap: wrap;
@@ -22,6 +33,11 @@
                                 opacity: 0;
                                 pointer-events: none;
                         }
+                }
+
+                &__label {
+                        visibility: hidden;
+                        opacity: 0;
                 }
         }
 }
