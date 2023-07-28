@@ -1,6 +1,6 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
-import AppContext from "./../../context";
+import AppContext from "../../context";
 
 import Sprite from "../sprite/Sprite";
 

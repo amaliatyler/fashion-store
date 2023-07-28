@@ -1,13 +1,20 @@
 .arrivals {
-  
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    @include adaptive-value('padding-bottom', 80, 40, 1);
+  }
+
   &__title {
-    @include adaptive-value('margin-bottom', 100, 30, 0);
+    margin: 0;
   }
 
   &__cards {
     display: grid;
     gap:32px;
-    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    grid-template-columns: repeat(auto-fit, 285px);
   }
 
 }

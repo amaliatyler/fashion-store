@@ -9,17 +9,11 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: baseline;
+        @include adaptive-value('padding-top', 40, 20, 1);
+        @include adaptive-value('padding-bottom', 40, 20, 1);
     }
 
     &__title {
-        flex-basis: 100%;
-    }
-
-    &__wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        @include adaptive-value('padding-left', 30, 10, 0);
-        @include adaptive-value('padding-right', 30, 10, 0);
     }
 
     &__title {
@@ -28,15 +22,8 @@
 
     &__products {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        @include adaptive-value('gap', 35, 15, 0);
-        @media (max-width:$md3 + px){
-            grid-template-columns: repeat(2, 1fr);
-        }
-        @media (max-width:$md2 + px){
-            grid-template-columns: 1fr;
-        }
-
+        grid-template-columns: repeat(auto-fit, 285px);
+        gap: 32px;
     }
 
     &__subtitle {

@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
-import Card from "../../components/cards/Card";
+import Card from "../../components/card/Card";
 import AppContext from "../../context";
 import dissapointedFace from "./noorders.svg";
+import { UserActionsInfo } from "../../components/userActionsInfo/UserActionsInfo";
 
 export function Orders() {
   const { onAddToFavorite, onAddToCart } = React.useContext(AppContext);
@@ -50,12 +51,7 @@ export function Orders() {
               </div>
             ))
           ) : (
-            <div className="order-empty">
-              <p className="order-empty__title empty-section">
-                You have not ordered anything yet
-              </p>
-              <img className="order-empty__img" src={dissapointedFace} alt="Dissapointed emoji" />
-            </div>
+            <UserActionsInfo message={'You have not ordered anything yet'}/>
           )}
         </div>
       </div>

@@ -1,0 +1,14 @@
+.section-empty {
+        align-items: center;
+        text-align: center;
+        font-weight: bold;
+        margin: 0 auto;
+        @include adaptive-value('font-size', 24, 16, 1);
+
+        &__img {
+                width: 40px;
+                height: 40px;
+                display: block;
+                margin: 0 auto;
+        }
+}

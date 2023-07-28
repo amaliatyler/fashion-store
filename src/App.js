@@ -12,6 +12,7 @@ import FavoritePage from "./pages/favorite/FavoritePage";
 import Drawer from "./components/drawer/Drawer";
 import AppContext from "./context";
 import { Orders } from "./pages/orders/Orders";
+import Card from "./components/card/Card";
 
 function App() {
   const [items, setItems] = React.useState([]);
@@ -122,6 +123,9 @@ function App() {
         items,
         cartItems,
         favorites,
+        searchValue,
+        handleInput, 
+        setSearchValue,
         isItemAdded,
         onAddToFavorite,
         setIsDrawerOpened,
@@ -165,10 +169,13 @@ function App() {
                     searchValue={searchValue}
                     setSearchValue={setSearchValue}
                     handleInput={handleInput}
+                    isLoading={isLoading}
+                    onPlus={(obj) => onAddToCart(obj)}
+                    onFavorite={(obj) => onAddToFavorite(obj)}
                   />
                 }
               />
-              <Route path="/favorite" element={<FavoritePage />} />
+              <Route path="/favorite" element={<FavoritePage onPlus={(obj) => onAddToCart(obj)}/>} />
               <Route path="/cart" element={<CartPage />} />
 
               <Route path="/orders" element={<Orders />} />

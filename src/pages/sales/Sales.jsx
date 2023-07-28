@@ -1,37 +1,42 @@
+import React from "react";
+
+import Card from "../../components/card/Card";
+
 import Personality from "../../components/personality/personality";
 import SaleBanner from "../../components/saleBanner/saleBanner";
-import SalesProduct from "../../components/salesProduct/SalesProduct";
-import Search from "../../components/search/Search";
-import Sprite from "../../components/sprite/Sprite";
-import { saleProducts } from "../../helpers/saleProductsList";
+import AppContext from "../../context";
 
+function SalesPage({ isLoading, onFavorite, onPlus }) {
+  const { items } = React.useContext(AppContext);
 
-function SalesPage( { handleInput, searchValue, setSearchValue }) {
+  const renderSaleItems = () => {
+    const filteredSaleItems = items.filter((item) => item.sale > 0);
+
+    return isLoading
+      ? [...Array(8)]
+      : filteredSaleItems.map((item, index) => (
+          <Card
+            key={index}
+            onPlus={onPlus}
+            onFavorite={onFavorite}
+            id={item && item.id}
+            isLoading={isLoading}
+            {...item}
+          />
+      ));
+  };
+
   return (
     <>
       <SaleBanner />
       <section className="discounts">
-        <div className="discounts__wrapper">
+        <div className="discounts__container container">
           <div className="discounts__header">
-            <h2 className="discounts__title section-title">{searchValue ? `Searching for: ${searchValue}` : `SUMMER SALE`}</h2>
+            <h2 className="discounts__title section-title">SUMMER SALE</h2>
             <span className="discounts__subtitle">Save up to 50%!</span>
-            <Search handleInput={handleInput} searchValue={searchValue} setSearchValue={setSearchValue} className="discounts__search"/>
           </div>
           <div className="discounts__products product">
-            {/* Сократить код и вынести логику в отдельную функцию */}
-            {/* {saleProducts.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase())).map((product, index) => {
-              return (
-                <SalesProduct
-                  key={index}
-                  title={product.title}
-                  oldPrice={product.oldPrice}
-                  newPrice={product.newPrice}
-                  rightsOwner={product.rightsOwner}
-                  img={product.img}
-                  index={index}
-                />
-              );
-            })} */}
+            {renderSaleItems()}
           </div>
         </div>
       </section>

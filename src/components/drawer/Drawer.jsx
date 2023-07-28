@@ -7,13 +7,13 @@ import sadface from "./sadface.svg";
 import completedOrder from "./completedOrder.svg";
 import Info from "../Info";
 import { useCart } from "../../hooks/useCart";
-import Card from "../cards/Card";
+import Card from "../card/Card";
 
 /* костыль: задержка, чтобы mockapi не заблокировал */
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
-  const { cartItems, setCartItems, totalPriceAfterDiscount, totalDiscount} = useCart();
+  const { cartItems, setCartItems, totalPrice, totalPriceAfterDiscount, totalDiscount} = useCart();
   const [orderId, setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -100,13 +100,13 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
             <div className="cart__total total">
               <div className="total__text">Total price:</div>
               <div className="total__dash"></div>
-              <div className="total__price">{totalDiscount} $</div>
+              <div className="total__price">{totalPrice} $</div>
             </div>
-            <div className="cart__discount discount">
-              <div className="discount__text">Total discount:</div>
+            {totalDiscount > 0 && <div className="cart__discount discount">
+              <div className="discount__text">Total price after discount:</div>
               <div className="discount__dash"></div>
               <div className="discount__price">{totalPriceAfterDiscount} $</div>
-            </div>
+            </div>}
             <button
               disabled={isLoading}
               onClick={onClickOrder}
