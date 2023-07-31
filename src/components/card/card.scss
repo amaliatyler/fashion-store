@@ -80,17 +80,6 @@
         line-height: 150%;
     }
 
-    &__price {
-        @include adaptive-value('margin-right', 15, 10, 0);
-        @include adaptive-value('font-size', 25, 16, 0);
-        color: black;
-        &_old {
-            @include adaptive-value('font-size', 18, 16, 0);
-            text-decoration: line-through;
-            color: var(--mainGrey);
-        }
-    }
-
     &__actions {
 
         @media (any-hover: none) {

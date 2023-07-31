@@ -92,6 +92,17 @@ body._lock {
   color: var(--mainGrey);
 }
 
+.price {
+  @include adaptive-value('margin-right', 15, 10, 0);
+  @include adaptive-value('font-size', 25, 16, 0);
+  color: black;
+  &_old {
+      @include adaptive-value('font-size', 18, 16, 0);
+      text-decoration: line-through;
+      color: var(--mainGrey);
+  }
+}
+
 .btn {
   display: inline-flex;
   justify-content: center;

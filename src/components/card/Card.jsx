@@ -82,8 +82,8 @@ function Card({
               <h5 className="card__title">{title}</h5>
             </div>
             <div className="card__prices">
-              <div className="card__price">{sale ? salePrice : price}$</div>
-              {sale && <div className="card__price card__price_old">{price}$</div>}
+              <div className="card__price price">{sale ? salePrice : price}$</div>
+              {sale && <div className="card__price price_old">{price}$</div>}
             </div>
             <div className="card__actions actions-card">
               <div className="actions-card__body">

@@ -7,7 +7,7 @@ function Footer() {
         <div className="container">
             <div className="footer__body">
                 <div className="footer__main">
-                    <a href="#!" className="footer__logo">Fashion</a>
+                    <a href="#!" className="footer__logo">essential items</a>
                     <div className="footer__text">Complete your style with awesome clothes from us.</div>
                     <div className="footer__social social">
                         <div className="social__list">

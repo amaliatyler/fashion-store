@@ -13,6 +13,7 @@ import Drawer from "./components/drawer/Drawer";
 import AppContext from "./context";
 import { Orders } from "./pages/orders/Orders";
 import Card from "./components/card/Card";
+import { Product } from "./pages/productPage/Product";
 
 function App() {
   const [items, setItems] = React.useState([]);
@@ -45,6 +46,8 @@ function App() {
 
     fetchData();
   }, []);
+
+  console.log(items)
 
 
   const onAddToCart = async (obj) => {
@@ -177,8 +180,8 @@ function App() {
               />
               <Route path="/favorite" element={<FavoritePage onPlus={(obj) => onAddToCart(obj)}/>} />
               <Route path="/cart" element={<CartPage />} />
-
               <Route path="/orders" element={<Orders />} />
+              <Route path="/product/:id" element={<Product />} />
             </Routes>
           </div>
           <Footer />
