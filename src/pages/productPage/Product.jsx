@@ -9,7 +9,7 @@ export const Product = () => {
   const { id } = useParams();
   const { items, countSalePrice } = React.useContext(AppContext);
 
-  const product = items[id];
+  const product = items[id - 1];
   console.log(items)
 
   const salePrice = product && countSalePrice(product.price, product.sale);

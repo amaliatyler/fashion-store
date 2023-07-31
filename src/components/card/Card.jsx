@@ -1,5 +1,6 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
+import { NavLink  } from "react-router-dom";
 import AppContext from "../../context";
 
 import Sprite from "../sprite/Sprite";
@@ -23,7 +24,11 @@ function Card({
   const { isItemAdded, countSalePrice } = React.useContext(AppContext);
   const [isFavorite, setIsFavorite] = React.useState(favorited);
 
-  const objProps = { id, parentId: id, title, img, price, sale, rightsOwner };
+  // const objProps = { id, parentId: id, title, img, price, sale, rightsOwner };
+  const parentId = id;
+
+  const objProps = { id, parentId, title, img, price, sale, rightsOwner };
+  
 
   const onClickPlus = () => {
     onPlus(objProps);
@@ -87,9 +92,9 @@ function Card({
             </div>
             <div className="card__actions actions-card">
               <div className="actions-card__body">
-                <a href="#!" className="actions-card__btn btn">
+                <NavLink to={`/product/${parentId}`} className="actions-card__btn btn">
                   See more
-                </a>
+                </NavLink>
                 <a href="#!" className={cartClass} onClick={onClickPlus}>
                   <Sprite
                     className={"actions-card__icon cart-icon"}
