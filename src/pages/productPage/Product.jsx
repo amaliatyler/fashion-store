@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+
 import AppContext from "../../context";
 import { UserActionsInfo } from "../../components/userActionsInfo/UserActionsInfo";
 
@@ -12,13 +13,14 @@ export const Product = () => {
 
   const salePrice = product && countSalePrice(product.price, product.sale);
 
+
   return (
     <section className="product-section section-block">
       <div className="product-section__container container">
         {product ? (
           <div className="product">
             <div className="product__img-wrapper">
-              <img className="product__img" alt="alt" src={product.img} />
+              <img src={product.img} alt={product.title}/>
             </div>
             <div className="product__info">
               <p className="product__title">{product.title}</p>

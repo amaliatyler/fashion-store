@@ -1,8 +1,8 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 import { NavLink  } from "react-router-dom";
-import AppContext from "../../context";
 
+import AppContext from "../../context";
 import Sprite from "../sprite/Sprite";
 
 function Card({
