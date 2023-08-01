@@ -1,7 +1,8 @@
 # Getting Started with Create React App
 
 Проект создан с помощью Create React App.
-Stack:
+
+Стэк:
 - ReactJS + Хуки
 - React Router
 - Axios
