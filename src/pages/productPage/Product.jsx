@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import ReactImageMagnify from "react-image-magnify";
 
 import AppContext from "../../context";
 import { UserActionsInfo } from "../../components/userActionsInfo/UserActionsInfo";
@@ -9,10 +10,8 @@ export const Product = () => {
   const { items, countSalePrice } = React.useContext(AppContext);
 
   const product = items[id - 1];
-  console.log(items);
 
   const salePrice = product && countSalePrice(product.price, product.sale);
-
 
   return (
     <section className="product-section section-block">
@@ -20,7 +19,23 @@ export const Product = () => {
         {product ? (
           <div className="product">
             <div className="product__img-wrapper">
-              <img src={product.img} alt={product.title}/>
+              <ReactImageMagnify
+                {...{
+                  smallImage: {
+                    alt: product.title,
+                    isFluidWidth: true,
+                    src: product.img,
+                  },
+                  largeImage: {
+                    src: product.img,
+                    width: 1028,
+                    height: 1285,
+                  },
+                  isHintEnabled: true,
+                  enlargedImagePosition: 'over',
+                  hintTextTouch: 'Long-Touch to Zoom',
+                }}
+              />
             </div>
             <div className="product__info">
               <p className="product__title">{product.title}</p>

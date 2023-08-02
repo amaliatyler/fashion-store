@@ -9,7 +9,7 @@
 - SCSS
 - React Context
 - React Skeleton
-- react-image-zoom
+- react-image-magnify
 
 
 ## Available Scripts

@@ -47,8 +47,6 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(items)
-
 
   const onAddToCart = async (obj) => {
     try {
