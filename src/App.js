@@ -125,6 +125,7 @@ function App() {
         cartItems,
         favorites,
         searchValue,
+        isLoading,
         handleInput, 
         setSearchValue,
         isItemAdded,

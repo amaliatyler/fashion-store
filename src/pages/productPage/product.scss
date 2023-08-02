@@ -29,3 +29,14 @@
         @include adaptive-value('margin-bottom', 50, 20, 1);
   }
 }
+
+.product-img {
+  height: 600px !important;
+  width: 400px !important;
+}
+
+.img-props {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover;
+}
