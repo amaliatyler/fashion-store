@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ReactImageMagnify from "react-image-magnify";
 // import img from './../../../public/images/items/item-01.jpg';
 
 import AppContext from "../../context";
 import { UserActionsInfo } from "../../components/userActionsInfo/UserActionsInfo";
+import BtnLink from "../../components/ui/btn/BtnLink";
+import { CustomLink } from "../../components/ui/CustomLink";
 
 export const Product = () => {
   const { id } = useParams();
@@ -40,6 +42,9 @@ export const Product = () => {
   return (
     <section className="product-section section-block">
       <div className="product-section__container container">
+        <div className="product-section__header">
+          <CustomLink adress="/" linkInner="Go back to all products" parentClass="product-section"/>
+        </div>
         <div className="product">
           <div className="product__img-wrapper">
             <ReactImageMagnify
@@ -56,6 +61,7 @@ export const Product = () => {
                 },
                 isHintEnabled: true,
                 enlargedImagePosition: "over",
+                hintTextMouse: 'Hover to Zoom',
                 hintTextTouch: "Long-Touch to Zoom",
                 className: "product-img",
                 imageClassName: "img-props",
@@ -76,7 +82,7 @@ export const Product = () => {
               )}
             </div>
             <p className="product__descripiton">
-              There will be more Info soon...
+              {product.descr}
             </p>
           </div>
         </div>

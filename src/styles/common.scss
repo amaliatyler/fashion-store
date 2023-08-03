@@ -75,12 +75,10 @@ body._lock {
 }
 
 .section-title {
-  font-weight: 900;
   @include adaptive-value('font-size', 48, 30, 0);
   @include adaptive-value('margin-bottom', 60, 30, 1);
   line-height: 1.04;
   letter-spacing: 0.06em;
-  text-decoration: underline;
   text-transform: lowercase;
 }
 
@@ -176,4 +174,15 @@ body._lock {
 .section-block {
   @include adaptive-value('padding-top', 120, 30, 0);
   @include adaptive-value('padding-bottom', 120, 30, 0);
+}
+
+.custom-link {
+  color: black;
+  @include adaptive-value('font-size', 24, 16, 1);
+  text-transform: lowercase;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+  &:hover {
+    color: var(--mainBeige);
+  }
 }

@@ -35,7 +35,7 @@ function SalesPage({ isLoading, onFavorite, onPlus }) {
             <h2 className="discounts__title section-title">SUMMER SALE</h2>
             <span className="discounts__subtitle">Save up to 50%!</span>
           </div>
-          <div className="discounts__products product">
+          <div className="discounts__products">
             {renderSaleItems()}
           </div>
         </div>

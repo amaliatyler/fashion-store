@@ -28,6 +28,29 @@
   &__prices {
         @include adaptive-value('margin-bottom', 50, 20, 1);
   }
+
+  &-section {
+    &__header {
+      display: flex;
+      align-items: center;
+      @include adaptive-value('padding-top', 30, 18, 1);
+      @include adaptive-value('padding-bottom', 30, 18, 1);
+    }
+    .arrow {
+      height: 2px;
+      &::before {
+        height: inherit;
+        top: 0.5px;
+        left: -6.5px;
+      }
+      &::after {
+        height: inherit;
+        top: -0.5px;
+        left: -6.5px;
+      }
+    }
+  }
+
 }
 
 .product-img {
