@@ -1,5 +1,5 @@
 
-function CloseBtn({ setSearchValue, className} ) {
+function CleanBtn({ setSearchValue, className} ) {
   return (
         <button  onClick={() => setSearchValue('')} type="close-button button">
                 <span className="sr-only">Close</span>
@@ -8,4 +8,4 @@ function CloseBtn({ setSearchValue, className} ) {
   )
 }
 
-export default CloseBtn;
+export default CleanBtn;

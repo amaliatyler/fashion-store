@@ -1,8 +1,9 @@
 .sign-up {
-    @include adaptive-value('padding-top', 140, 85, 0);
-    @include adaptive-value('padding-bottom', 155, 80, 0);
+    @include adaptive-value('padding-top',240, 85, 0);
+    @include adaptive-value('padding-bottom', 255, 80, 0);
     background-color: var(--mainBeige);
     color: var(--mainWhite);
+    position: relative;
 
     &__wrapper {
         text-align: center;

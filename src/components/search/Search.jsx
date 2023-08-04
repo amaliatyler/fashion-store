@@ -1,5 +1,5 @@
 import Sprite from "../sprite/Sprite";
-import CloseBtn from "../ui/closeBtn/CloseBtn";
+import CleanBtn from "../ui/cleanBtn/CleanBtn";
 
 
 function Search({className, searchValue, handleInput, setSearchValue }) {
@@ -8,7 +8,7 @@ function Search({className, searchValue, handleInput, setSearchValue }) {
         <div className={className + " search"}>
             <Sprite className="search__icon" id="search" iconName="search"/>
             <input onChange={handleInput} type="text" value={searchValue} placeholder="Search..." className="search__input"/>
-            <CloseBtn searchValue={searchValue} setSearchValue={setSearchValue} />
+            <CleanBtn searchValue={searchValue} setSearchValue={setSearchValue} />
         </div>
     )
 }

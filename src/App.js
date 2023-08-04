@@ -21,6 +21,7 @@ function App() {
   const [cartItems, setCartItems] = React.useState([]);
   const [favorites, setFavorites] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [openModal, setOpenModal] = React.useState(true);
 
   /* отправляем запрос на бэкенд только при первом рендере */
   React.useEffect(() => {
@@ -49,6 +50,7 @@ function App() {
 
 
   const onAddToCart = async (obj) => {
+    let cartItemCounter = 0;
     try {
       const findItem = cartItems.find((item) => Number(item.parentId) === Number(obj.id));
       if (findItem) {
@@ -172,6 +174,8 @@ function App() {
                     cartItems={cartItems}
                     onFavorite={(obj) => onAddToFavorite(obj)}
                     isLoading={isLoading}
+                    openModal={openModal}
+                    setOpenModal={setOpenModal}
                   />
                 }
               />
