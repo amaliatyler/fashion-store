@@ -6,7 +6,7 @@ import Promo from "../components/promo/Promo";
 import SignUp from "../components/signUp/SignUp";
 import Sale from "../components/sale/Sale";
 
-function Home({ onPlus, items, onFavorite, cartItems, isLoading, openModal, setOpenModal }) {
+function Home({ onPlus, items, onFavorite, cartItems, isLoading, openModal, setOpenModal, onClickModal }) {
 
   return (
     <>
@@ -19,6 +19,7 @@ function Home({ onPlus, items, onFavorite, cartItems, isLoading, openModal, setO
       <SignUp
         openModal={openModal}
         setOpenModal={setOpenModal}
+        onClickModal={onClickModal}
       />
     </>
   );

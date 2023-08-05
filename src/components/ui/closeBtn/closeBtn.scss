@@ -3,6 +3,7 @@
         transition: opacity 0.3s ease;
         height: 25px;
         width: 25px;
+        cursor: pointer;
         &__symbol {
                 &::before {
                         content: '';

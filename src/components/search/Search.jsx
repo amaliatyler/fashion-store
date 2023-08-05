@@ -8,7 +8,7 @@ function Search({className, searchValue, handleInput, setSearchValue }) {
         <div className={className + " search"}>
             <Sprite className="search__icon" id="search" iconName="search"/>
             <input onChange={handleInput} type="text" value={searchValue} placeholder="Search..." className="search__input"/>
-            <CleanBtn searchValue={searchValue} setSearchValue={setSearchValue} />
+            {searchValue && <CleanBtn searchValue={searchValue} setSearchValue={setSearchValue} />}
         </div>
     )
 }

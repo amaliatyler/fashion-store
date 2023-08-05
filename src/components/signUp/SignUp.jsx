@@ -2,13 +2,14 @@ import { Modal } from "../modal/Modal";
 
 import letter from './love-letter.svg';
 
-function SignUp({ openModal, setOpenModal }) {
+function SignUp({ openModal, setOpenModal, onClickModal }) {
+
   return (
     <section className="sign-up">
         <div className="container">
            <div className="sign-up__wrapper">
             {openModal ? 
-              (<Modal icon={letter}/>) 
+              (<Modal openModal={openModal} setOpenModal={setOpenModal} icon={letter} onClickModal={onClickModal}/>) 
                 :
               (
                 <>
