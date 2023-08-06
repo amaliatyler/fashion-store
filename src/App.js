@@ -21,7 +21,7 @@ function App() {
   const [cartItems, setCartItems] = React.useState([]);
   const [favorites, setFavorites] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
-  const [openModal, setOpenModal] = React.useState(true);
+  const [openModal, setOpenModal] = React.useState(false);
 
   /* отправляем запрос на бэкенд только при первом рендере */
   React.useEffect(() => {

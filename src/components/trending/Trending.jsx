@@ -4,7 +4,7 @@ import Card from "../card/Card";
 import AppContext from "../../context";
 import Search from "../search/Search";
 
-function Arrivals({ onPlus, onFavorite, isLoading, items = [] }) {
+function Trending({ onPlus, onFavorite, isLoading, items = [] }) {
 
   const { searchValue, handleInput, setSearchValue } = React.useContext(AppContext);
   
@@ -25,16 +25,16 @@ function Arrivals({ onPlus, onFavorite, isLoading, items = [] }) {
   };
 
   return (
-    <section className="arrivals section-block">
-      <div className="arrivals__container container">
-        <div className="arrivals__header">
-          <h2 className="arrivals__title section-title">{searchValue ? `searching for: ${searchValue}` : `trending now`}</h2>
+    <section className="trending section-block">
+      <div className="trending__container container">
+        <div className="trending__header">
+          <h2 className="trending__title section-title">{searchValue ? `searching for: ${searchValue}` : `trending now`}</h2>
           <Search handleInput={handleInput} searchValue={searchValue} setSearchValue={setSearchValue} className="discounts__search"/>
         </div>
-        <div className="arrivals__cards">{renderItems()}</div>
+        <div className="trending__cards">{renderItems()}</div>
       </div>
     </section>
   );
 }
 
-export default Arrivals;
+export default Trending;

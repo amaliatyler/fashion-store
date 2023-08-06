@@ -1,4 +1,4 @@
-.arrivals {
+.trending {
 
   &__header {
     display: flex;
@@ -14,7 +14,7 @@
   &__cards {
     display: grid;
     gap:32px;
-    grid-template-columns: repeat(auto-fit, 285px);
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
   }
 
 }
