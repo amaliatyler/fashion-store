@@ -1,6 +1,7 @@
 import { Modal } from "../modal/Modal";
 
 import letter from './love-letter.svg';
+import subscribe from './subscribe.svg';
 
 function SignUp({ openModal, setOpenModal }) {
 
@@ -16,7 +17,9 @@ function SignUp({ openModal, setOpenModal }) {
                 <div className="subscribe__title">Stay Updated</div>
                 <form data-message="subscribe" data-test action="#" className="subscribe__form">
                     <input className="subscribe__input" autocomplete="off" type="email" name="form[]" data-error="Ошибка" data-value="" required placeholder="Enter your email" className="subscribe__input" />
-                    <button type="submit" className="subscribe__button"></button>
+                    <button type="submit" className="subscribe__button">
+                    <img src={subscribe}></img>
+                  </button>
                 </form>
                 </div>
 
