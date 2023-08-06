@@ -122,10 +122,10 @@ function App() {
     setSearchValue(event.target.value);
   };
 
-  const onClickModal = () => {
-    setOpenModal(!openModal);
-    console.log(openModal, setOpenModal);
-  }
+  // const onClickModal = () => {
+  //   setOpenModal(!openModal);
+  //   console.log(openModal, setOpenModal);
+  // }
 
   const isItemAdded = (id) => {
     return cartItems.some((obj) => Number(obj.parentId) === Number(id));
@@ -181,7 +181,6 @@ function App() {
                     isLoading={isLoading}
                     openModal={openModal}
                     setOpenModal={setOpenModal}
-                    onClickModal={onClickModal}
                   />
                 }
               />

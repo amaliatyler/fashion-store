@@ -1,6 +1,6 @@
 .sign-up {
-    @include adaptive-value('padding-top',240, 85, 0);
-    @include adaptive-value('padding-bottom', 255, 80, 0);
+    @include adaptive-value('padding-top',140, 80, 0);
+    @include adaptive-value('padding-bottom', 140, 80, 0);
     background-color: var(--mainBeige);
     color: var(--mainWhite);
     position: relative;
@@ -11,7 +11,7 @@
 
     &__title {
         font-weight: 900;
-        @include adaptive-value('font-size', 55, 30, 0);
+        @include adaptive-value('font-size', 40, 24, 0);
         text-transform: uppercase;
         line-height: calc(70 / 55);
         max-width: 966px;
@@ -20,7 +20,7 @@
 
     &__subtitle {
         font-weight: 400;
-        @include adaptive-value('font-size', 32, 20, 0);
+        @include adaptive-value('font-size', 24, 18, 0);
         line-height: calc(35 / 32);
         display: block;
     }
@@ -71,4 +71,23 @@
         }
     }
 
+}
+
+.subscribe {
+    &__title {
+        @include adaptive-value('font-size', 24, 16, 0);
+        text-transform: uppercase;
+        color: white;
+        font-weight: bold;
+        @include adaptive-value('margin-bottom', 30, 18, 0);
+    }
+
+    &__input {
+        width: fit-content;
+        background-color: white;
+        padding: 10px 20px;
+    }
+
+    &__button {
+    }
 }
