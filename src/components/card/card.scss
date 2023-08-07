@@ -198,6 +198,8 @@
     }
 
     &__icon.heart {
+        stroke: black;
+        fill: white;
             @media (any-hover: hover) {
                 fill: none;
                 stroke: white;
@@ -206,15 +208,6 @@
                     stroke: var(--mainBeige);
                     opacity: 0.5;
                 }
-                // &:focus {
-                //     fill: black;
-                //     stroke: black;
-                //     opacity: 1;
-                // }
-                // &:active {
-                //     fill: black;
-                //     stroke: black;
-                // }
             }
     }
 
@@ -223,6 +216,9 @@
         margin-bottom: 10px;
         background-color: black;
         color: white;
+        &:focus, &:active {
+            background-color: var(--mainBeige);
+        }
         @media (any-hover: hover) {
             background-color: white;
             color: black;

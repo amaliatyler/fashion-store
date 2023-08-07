@@ -2,6 +2,10 @@
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 40px;
+  @media (max-width: $md3+px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
   &__title {
     @include adaptive-value("margin-bottom", 7, 5, 0);
     cursor: pointer;
@@ -23,6 +27,10 @@
   &__info {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
+        @media (max-width: $md3+px) {
+          grid-column: 1 / 2;
+          grid-row: 3 / 4;
+        }
   }
 
   &__prices {
@@ -33,7 +41,7 @@
     &__header {
       display: flex;
       align-items: center;
-      @include adaptive-value('padding-top', 30, 18, 1);
+      @include adaptive-value('padding-top', 80, 50, 1);
       @include adaptive-value('padding-bottom', 30, 18, 1);
     }
     .arrow {
