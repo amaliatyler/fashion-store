@@ -4,6 +4,8 @@
     display: flex;
     justify-content: space-between;
     padding: 0px;
+    flex-wrap:wrap;
+    gap: 20px;
     @include adaptive-value('padding-bottom', 80, 40, 1);
   }
 
