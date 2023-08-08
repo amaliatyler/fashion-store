@@ -145,6 +145,11 @@ body._lock {
   margin: -1px;
 }
 
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .btn-block {
   display: flex;
   align-items: center;

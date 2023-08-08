@@ -1,13 +1,14 @@
 import React from "react";
-import { useEffect } from "react";
 import axios from "axios";
 
-import CartItem from "../cartItem/CartItem";
+import AppContext from "../../context";
+import { useCart } from "../../hooks/useCart";
+import Info from "../Info";
+import Card from "../card/Card";
+
+
 import sadface from "./sadface.svg";
 import completedOrder from "./completedOrder.svg";
-import Info from "../Info";
-import { useCart } from "../../hooks/useCart";
-import Card from "../card/Card";
 
 /* костыль: задержка, чтобы mockapi не заблокировал */
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -17,6 +18,7 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
   const [orderId, setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
+  const { blockScroll } = React.useContext(AppContext);
 
   const onClickOrder = async () => {
     try {
@@ -46,13 +48,8 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
     setIsLoading(false);
   };
 
-  const blockScroll = function () {
-    opened
-      ? document.body.classList.add("_lock")
-      : document.body.classList.remove("_lock");
-  };
 
-  blockScroll();
+  blockScroll(opened);
 
   
 
@@ -74,15 +71,6 @@ function Drawer({ onClose, onRemoveFromCart, opened, items = [] }) {
             <div className="drawer__items">
               {items.map((item) => {
                 return (
-                  // <CartItem
-                  //   key={item.id}
-                  //   title={item.title}
-                  //   img={item.img}
-                  //   index={index}
-                  //   price={item.price}
-                  //   onRemoveFromCart={onRemoveFromCart}
-                  //   id={item.id}
-                  // />
                   <Card
                     key={item.id}
                     onRemoveFromCart={onRemoveFromCart}

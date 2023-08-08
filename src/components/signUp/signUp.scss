@@ -1,12 +1,15 @@
 .sign-up {
+    min-height: 370px;
     @include adaptive-value('padding-top',140, 80, 0);
     @include adaptive-value('padding-bottom', 140, 80, 0);
     background-color: var(--mainBeige);
     color: var(--mainWhite);
     position: relative;
-
     &__wrapper {
         text-align: center;
+        transition: 0.5s all;
+        opacity: 1;
+        visibility: visible;
     }
 
     &__title {
@@ -103,6 +106,7 @@
         width: fit-content;
         background-color: white;
         padding: 10px 20px;
+        color: var(--accent);
     }
 
     &__button {

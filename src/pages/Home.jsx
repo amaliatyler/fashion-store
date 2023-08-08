@@ -6,7 +6,7 @@ import Promo from "../components/promo/Promo";
 import SignUp from "../components/signUp/SignUp";
 import Sale from "../components/sale/Sale";
 
-function Home({ onPlus, items, onFavorite, cartItems, isLoading, openModal, setOpenModal}) {
+function Home({ onPlus, items, onFavorite, cartItems, isLoading, modalActive, setModalActive}) {
 
   return (
     <>
@@ -17,8 +17,8 @@ function Home({ onPlus, items, onFavorite, cartItems, isLoading, openModal, setO
       <Sale />
       <Application /> */}
       <SignUp
-        openModal={openModal}
-        setOpenModal={setOpenModal}
+        modalActive={modalActive}
+        setModalActive={setModalActive}
       />
     </>
   );

@@ -21,7 +21,7 @@ function App() {
   const [cartItems, setCartItems] = React.useState([]);
   const [favorites, setFavorites] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
-  const [openModal, setOpenModal] = React.useState(false);
+  const [modalActive, setModalActive] = React.useState(false);
 
   /* отправляем запрос на бэкенд только при первом рендере */
   React.useEffect(() => {
@@ -122,11 +122,6 @@ function App() {
     setSearchValue(event.target.value);
   };
 
-  // const onClickModal = () => {
-  //   setOpenModal(!openModal);
-  //   console.log(openModal, setOpenModal);
-  // }
-
   const isItemAdded = (id) => {
     return cartItems.some((obj) => Number(obj.parentId) === Number(id));
   };
@@ -135,6 +130,12 @@ function App() {
     let carry = sale ? sale : 0;
     return Math.round(Number(price) - ((Number(price) * Number(carry)) / 100));
   }
+
+  const blockScroll = function (condition) {
+    condition
+      ? document.body.classList.add("_lock")
+      : document.body.classList.remove("_lock");
+  };
 
   return (
     <AppContext.Provider
@@ -150,7 +151,8 @@ function App() {
         onAddToFavorite,
         setIsDrawerOpened,
         setCartItems,
-        countSalePrice
+        countSalePrice,
+        blockScroll
       }}
     >
       <div className="App">
@@ -179,8 +181,8 @@ function App() {
                     cartItems={cartItems}
                     onFavorite={(obj) => onAddToFavorite(obj)}
                     isLoading={isLoading}
-                    openModal={openModal}
-                    setOpenModal={setOpenModal}
+                    modalActive={modalActive}
+                    setModalActive={setModalActive}
                   />
                 }
               />
