@@ -15,6 +15,8 @@ import { Orders } from "./pages/orders/Orders";
 import Card from "./components/card/Card";
 import { Product } from "./pages/productPage/Product";
 
+import NavFunc from "./utils/navFuncs";
+
 function App() {
   const [items, setItems] = React.useState([]);
   const [isDrawerOpened, setIsDrawerOpened] = React.useState(false);
@@ -136,6 +138,8 @@ function App() {
       ? document.body.classList.add("_lock")
       : document.body.classList.remove("_lock");
   };
+
+  NavFunc();
 
   return (
     <AppContext.Provider

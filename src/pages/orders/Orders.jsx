@@ -23,7 +23,7 @@ export function Orders() {
 
       fetchOrders();
     } catch (error) {
-      alert("Не удалось загрузить заказы :(");
+      alert("Could not load the orders :(");
     }
   }, []);
 
@@ -35,7 +35,7 @@ export function Orders() {
           {orders.length > 0 ? (
             orders.map((order) => (
               <div className="order" key={order.id}>
-                <h3 className="order__num">Заказ #{order.id}</h3>
+                <h3 className="order__num">Order #{order.id}</h3>
                 <ul className="order__items">
                   {order.items.map((item, index) => (
                     <Card
