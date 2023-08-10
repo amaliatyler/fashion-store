@@ -44,6 +44,7 @@ function SignUp({ modalActive, setModalActive }) {
                 data-error="Ошибка"
                 data-value=""
                 placeholder="Enter your email"
+                required
               />
               <button type="submit" className="subscribe__button">
                 <img src={subscribe} alt="paper airplane"></img>
