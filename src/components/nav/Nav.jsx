@@ -9,7 +9,7 @@ function Nav({className, handleCartClick}) {
     const { totalPriceAfterDiscount } = useCart();
 
     return(
-        <nav className={`nav ${className}`}>
+        <nav className={`${className} nav`}>
             <ul className="nav__list list">
                 <CustomLink to="/" className="list__link">HOME</CustomLink>
                 <CustomLink to="/sales" className="list__link">SALE</CustomLink>

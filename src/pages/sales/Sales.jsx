@@ -9,8 +9,9 @@ import AppContext from "../../context";
 function SalesPage({ isLoading, onFavorite, onPlus }) {
   const { items } = React.useContext(AppContext);
 
+  const filteredSaleItems = items.filter((item) => item.sale > 0);
+
   const renderSaleItems = () => {
-    const filteredSaleItems = items.filter((item) => item.sale > 0);
 
     return isLoading
       ? [...Array(8)]
@@ -26,6 +27,16 @@ function SalesPage({ isLoading, onFavorite, onPlus }) {
       ));
   };
 
+  function getBiggestDiscount(arr) {
+    let biggestNum = 0;
+    arr.forEach(item => {
+      biggestNum = Math.max(biggestNum, item.sale);
+    });
+    return biggestNum;
+  }
+
+  const maxDiscount = getBiggestDiscount(filteredSaleItems);
+
   return (
     <>
       <SaleBanner />
@@ -33,7 +44,7 @@ function SalesPage({ isLoading, onFavorite, onPlus }) {
         <div className="discounts__container container">
           <div className="discounts__header">
             <h2 className="discounts__title section-title">SUMMER SALE</h2>
-            <span className="discounts__subtitle">Save up to 50%!</span>
+            <span className="discounts__subtitle">Save up to {maxDiscount}%!</span>
           </div>
           <div className="discounts__products">
             {renderSaleItems()}

@@ -8,7 +8,7 @@ function Header({ handleCartClick }) {
         <div className="header__row">
           <a href="/">
             <div className="header__logo">
-              <Sprite id="logo" className="logo" iconName="logo" />
+              {/* <Sprite id="logo" className="logo" iconName="logo" /> */}
               <span>essential items</span>
             </div>
           </a>
