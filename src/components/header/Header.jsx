@@ -12,7 +12,7 @@ function Header({ handleCartClick }) {
               <span>essential items</span>
             </div>
           </a>
-          <Nav handleCartClick={handleCartClick} className="header__nav" />
+          <Nav handleCartClick={handleCartClick} className="header__nav"/>
           <div className="header__icon">
             <span></span>
           </div>

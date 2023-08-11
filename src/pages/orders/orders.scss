@@ -1,4 +1,7 @@
 .orders {
+
+        padding-top: 100px;
+
         &__cards {
                 /* от более новых заказов к более старым */
                 display: flex;
@@ -10,9 +13,9 @@
 
         flex-basis: 100%;
 
-        @include adaptive-value('padding', 40, 20, 1);
-        display: flex;
-        flex-wrap: wrap;
+        // @include adaptive-value('padding', 40, 20, 1);
+        // display: flex;
+        // flex-wrap: wrap;
         &__num {
                 flex-basis: 100%;
                 font-weight: 600;
@@ -22,7 +25,7 @@
         &__items {
                 display: grid;
                 gap: 30px;
-                grid-template-columns: repeat(auto-fill, 200px);
+                grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
                 width: 100%;
         }
 
