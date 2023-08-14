@@ -12,10 +12,9 @@
 .order {
 
         flex-basis: 100%;
-
-        // @include adaptive-value('padding', 40, 20, 1);
-        // display: flex;
-        // flex-wrap: wrap;
+        &:not(last-child) {
+                @include adaptive-value('margin-bottom', 50, 25, 1);
+        }
         &__num {
                 flex-basis: 100%;
                 font-weight: 600;
@@ -25,7 +24,7 @@
         &__items {
                 display: grid;
                 gap: 30px;
-                grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(min-content, 285px));
                 width: 100%;
         }
 
