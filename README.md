@@ -2,6 +2,10 @@
 
 Проект создан с помощью Create React App.
 
+Ссылка на проект: https://essential-items.vercel.app/
+
+*остаются работы по адаптиву
+
 Стэк:
 - ReactJS + Хуки
 - React Router
