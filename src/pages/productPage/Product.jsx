@@ -1,12 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
-import ReactImageMagnify from "react-image-magnify";
-// import img from './../../../public/images/items/item-01.jpg';
+import React, { useState, useEffect, useContext } from 'react';
+import { useParams } from 'react-router-dom';
 
-import AppContext from "../../context";
-import { UserActionsInfo } from "../../components/userActionsInfo/UserActionsInfo";
-import BtnLink from "../../components/ui/btn/BtnLink";
-import { CustomLink } from "../../components/ui/CustomLink";
+import AppContext from '../../context';
+import { UserActionsInfo } from '../../components/userActionsInfo/UserActionsInfo';
+import { CustomLink } from '../../components/ui/CustomLink';
 
 export const Product = () => {
   const { id } = useParams();
@@ -19,12 +16,12 @@ export const Product = () => {
 
   useEffect(() => {
     // const selectedProduct = items.find((item) => item.id === id + 1);
-    const selectedProduct = items[id-1];
+    const selectedProduct = items[id - 1];
     setProduct(selectedProduct);
   }, [id, items]);
 
   useEffect(() => {
-    if(product) {
+    if (product) {
       const img = new Image();
       img.src = product.img;
       img.onload = () => {
@@ -33,8 +30,8 @@ export const Product = () => {
     }
   }, [product]);
 
-  if(!product) {
-    return <UserActionsInfo message={'Could not find the product'}/>
+  if (!product) {
+    return <UserActionsInfo message={'Could not find the product'} />;
   }
 
   const salePrice = product && countSalePrice(product.price, product.sale);
@@ -43,30 +40,32 @@ export const Product = () => {
     <section className="product-section section-block">
       <div className="product-section__container container">
         <div className="product-section__header">
-          <CustomLink adress="/" linkInner="Go back to all products" parentClass="product-section"/>
+          <CustomLink
+            adress="/"
+            linkInner="Go back to all products"
+            parentClass="product-section"
+          />
         </div>
         <div className="product">
           <div className="product__img-wrapper">
-            <ReactImageMagnify
-              {...{
-                smallImage: {
-                  alt: product.title,
-                  isFluidWidth: true,
-                  src: product.img,
-                },
-                largeImage: {
-                  src: product.img,
-                  width: imageDimensions.width,
-                  height: imageDimensions.height,
-                },
-                isHintEnabled: true,
-                enlargedImagePosition: "over",
-                hintTextMouse: 'Hover to Zoom',
-                hintTextTouch: "Long-Touch to Zoom",
-                className: "product-img",
-                imageClassName: "img-props",
-              }}
-            />
+            {...{
+              smallImage: {
+                alt: product.title,
+                isFluidWidth: true,
+                src: product.img,
+              },
+              largeImage: {
+                src: product.img,
+                width: imageDimensions.width,
+                height: imageDimensions.height,
+              },
+              isHintEnabled: true,
+              enlargedImagePosition: 'over',
+              hintTextMouse: 'Hover to Zoom',
+              hintTextTouch: 'Long-Touch to Zoom',
+              className: 'product-img',
+              imageClassName: 'img-props',
+            }}
           </div>
           <div className="product__info">
             <p className="product__title">{product.title}</p>
@@ -81,9 +80,7 @@ export const Product = () => {
                 <div className="product__price price_old">{product.price}$</div>
               )}
             </div>
-            <p className="product__descripiton">
-              {product.descr}
-            </p>
+            <p className="product__descripiton">{product.descr}</p>
           </div>
         </div>
       </div>
