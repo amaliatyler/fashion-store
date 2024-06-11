@@ -48,24 +48,11 @@ export const Product = () => {
         </div>
         <div className="product">
           <div className="product__img-wrapper">
-            {...{
-              smallImage: {
-                alt: product.title,
-                isFluidWidth: true,
-                src: product.img,
-              },
-              largeImage: {
-                src: product.img,
-                width: imageDimensions.width,
-                height: imageDimensions.height,
-              },
-              isHintEnabled: true,
-              enlargedImagePosition: 'over',
-              hintTextMouse: 'Hover to Zoom',
-              hintTextTouch: 'Long-Touch to Zoom',
-              className: 'product-img',
-              imageClassName: 'img-props',
-            }}
+            <img
+              src={product.img}
+              className="product__img"
+              alt={product.title}
+            />
           </div>
           <div className="product__info">
             <p className="product__title">{product.title}</p>
